@@ -5,7 +5,7 @@ class Posts extends Component {
     render() {
         return (
             <div>
-                <p>Welcome to Posts List Component!!</p>
+                <p>Posts List Component!!</p>
             </div>
         )
     }

@@ -5,7 +5,7 @@ class EditPosts extends Component {
     render() {
         return (
             <div>
-                <p>Welcome to Edit Posts Component!!</p>
+                <p>Edit Posts Component!!</p>
             </div>
         )
     }

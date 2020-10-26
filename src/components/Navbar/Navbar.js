@@ -1,29 +1,34 @@
 import React from 'react';
-import { BrowserRouter as Router, Route, Link } from "react-router-dom";
+import { Link } from "react-router-dom";
+
+import "bootstrap/dist/css/bootstrap.min.css";
 import './Navbar.css';
 
 function Navbar() {
 
-    return (
-        <div className="navbar">
-            <nav className="navbar navbar-expand-lg navbar-light bg-light">
-            <a class="navbar-brand" href="https://codingthesmartway.com" target="_blank">
-              {/* <img src={logo} width="30" height="30" alt="CodingTheSmartWay.com" /> */}
-            </a>
-            <Link to="/" className="navbar-brand">Goodhood!</Link>
-            <div className="collapse navbar-collapse">
-                <ul className="navbar-nav mr-auto">
-                    <li className="navbar-item">
-                    <Link to="/Posts" className="nav-link">Posts</Link>
-                    </li>
-                    <li className="navbar-item">
-                    <Link to="/Posts/Create-Posts" className="nav-link">Create Post</Link>
-                    </li>
-                </ul>
-                </div>
-            </nav>
-        </div>
-    )
+        return (
+            <div className="navbar">
+                <nav className="navbar navbar-expand-lg navbar-light bg-light">
+                    <a className="navbar-brand" href="/">
+                        <img src="/images/hand-logo.png" width="30" height="30" alt="hands connecting" />
+                    </a>
+                    <div className="collapse navbar-collapse">
+                        <ul className="navbar-nav mr-auto">
+                            <li className="navbar-item">
+                                <Link to="/about" className="nav-link">About</Link>
+                            </li>
+                            <li className="navbar-item">
+                                <Link to="/for-help" className="nav-link">Here for Help</Link>
+                            </li>
+                            <li className="navbar-item">
+                                <Link to="/to-help" className="nav-link">Here to Help</Link>
+                            </li>
+                        </ul>
+                    </div>
+                </nav>
+            </div>
+        )
+
 }
 
 export default Navbar;

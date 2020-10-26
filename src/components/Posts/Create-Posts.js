@@ -4,7 +4,7 @@ class CreatePosts extends Component {
     render() {
         return (
             <div>
-                <p>Welcome to Create Posts Component!!</p>
+                <p>Create Posts Component!!</p>
             </div>
         )
     }
