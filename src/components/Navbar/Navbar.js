@@ -8,7 +8,7 @@ function Navbar() {
 
         return (
             <div className="navbar">
-                <nav className="navbar navbar-expand-lg navbar-light bg-light">
+                <nav className="navbar fixed-top navbar-expand-sm navbar-light bg-light">
                     <a className="navbar-brand" href="/">
                         <img src="/images/hand-logo.png" width="30" height="30" alt="hands connecting" />
                     </a>
