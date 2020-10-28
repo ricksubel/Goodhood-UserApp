@@ -1,5 +1,5 @@
 import React from 'react'
-import "bootstrap/dist/css/bootstrap.min.css";
+
 import './Header.css';
 
 
@@ -9,7 +9,7 @@ function Header() {
             <header className="container">
                 <div>
                     <h1>Welcome to Goodhood!</h1>
-                    <h6>Making a Difference Everyday Everywhere!</h6>
+                    <h6 class="text-muted">Making a Difference Everyday Everywhere!</h6>
                 </div>
             </header>
     );

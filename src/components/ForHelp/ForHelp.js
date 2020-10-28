@@ -2,9 +2,8 @@ import React, { Component } from 'react';
 import './ForHelp.css';
 
 class ForHelp extends Component {
-
+    // TODO write function for onclick expand for posts
     // state = 
-
         // conditional for onclick
 
     render() {

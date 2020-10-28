@@ -5,27 +5,19 @@ class CreatePost extends Component {
     constructor(props) {
         super(props);
 
-        // TODO this.onChangeCreatePostCity = this.onChangeCreatePostCity.bind(this);
         this.onChangeCreatePostType = this.onChangeCreatePostType.bind(this);
+        this.onChangeCreatePostCity = this.onChangeCreatePostCity.bind(this);
         this.onChangeCreatePostDescription = this.onChangeCreatePostDescription.bind(this);
-        this.onChangeCreatePostResponsible = this.onChangeCreatePostResponsible.bind(this);
         this.onSubmit = this.onSubmit.bind(this);
 
         this.state = {
 
-            // TODO CreatePost_city: '',
             CreatePost_type: '',
+            CreatePost_city: '',
             CreatePost_description: '',
-            CreatePost_completed: false
         }
     }
 
-    // TODO 
-    // onChangeCreatePostCity(e) {
-    //     this.setState({
-    //         CreatePost_type: e.target.value
-    //     });
-    // }
 
     onChangeCreatePostType(e) {
         this.setState({
@@ -33,15 +25,16 @@ class CreatePost extends Component {
         });
     }
 
-    onChangeCreatePostDescription(e) {
+    onChangeCreatePostCity(e) {
         this.setState({
-            CreatePost_description: e.target.value
+            CreatePost_type: e.target.value
         });
     }
 
-    onChangeCreatePostResponsible(e) {
+
+    onChangeCreatePostDescription(e) {
         this.setState({
-            CreatePost_responsible: e.target.value
+            CreatePost_description: e.target.value
         });
     }
 
@@ -49,15 +42,14 @@ class CreatePost extends Component {
         e.preventDefault();
         
         console.log(`Form submitted:`);
-        // TODO console.log(`CreatePost Type: ${this.state.CreatePost_city}`);
         console.log(`CreatePost Type: ${this.state.CreatePost_type}`);
+        console.log(`CreatePost City: ${this.state.CreatePost_city}`);
         console.log(`CreatePost Description: ${this.state.CreatePost_description}`);
         
         this.setState({
-            // TODO CreatePost_city: '',
             CreatePost_type: '',
+            CreatePost_city: '',
             CreatePost_description: '',
-            CreatePost_completed: false
         })
     }
 
@@ -102,8 +94,18 @@ class CreatePost extends Component {
                                 <label className="form-check-label">Neighborhood Suggestions</label>
                             </div>
                         </div>
+                        {/* TODO Dropdown City */}
+                        <div class="dropdown show">
+                            <a class="btn btn-secondary dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                City
+                            </a>
+                            <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                                <a class="dropdown-item" href="">Action</a>
+                                <a class="dropdown-item" href="">Another action</a>
+                                <a class="dropdown-item" href="">Something else here</a>
+                            </div>
+                        </div>
                         <div className="form-group"> 
-                        {/* TODO create a dropdown or auto-fill line for Cities */}
                             <label>Description: </label>
                             <input  type="text"
                                     className="form-control"
@@ -112,7 +114,7 @@ class CreatePost extends Component {
                                     />
                         </div>
                         <div className="form-group">
-                            <input type="submit" value="Create CreatePost" className="btn btn-primary" />
+                            <input type="submit" value="Create CreatePost" className="btn bt-sm btn-primary" />
                         </div>
                     </form>
                 </div>

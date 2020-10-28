@@ -1,5 +1,6 @@
 header {
-	background-image: url('/src/Assets/images/hand-logo.png');
+    /* TODO where to put background image??? */
+	/* background-image: url('hand-logo.png'); */
     background-size: contain;
     background-repeat: no-repeat;
 }

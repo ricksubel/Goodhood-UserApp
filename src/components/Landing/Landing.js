@@ -7,18 +7,24 @@ function Landing() {
 
     return (
         <div className="container-fluid">
-            <div className="row">
+            <div className="row text-center">
                 <Header />
             </div>
-            <div className="row">
-                <div className="col-4 align-self-right">
-                    <div className="dot">Option1</div>
-                </div>
+            <div className="container d-flex justify-content-center text-center mt-5">
                 <div className="col-4 align-self-center">
-                    <div className="dot">Option1</div>
+                    <span className="dot">
+                        <p className=" my-auto">Option1</p>
+                    </span>
                 </div>
-                <div className="col-4 align-self-left">
-                    <div className="dot">Option1</div>
+                <div className="col-4">
+                    <span className="dot">
+                        <p>Option2</p>
+                    </span>
+                </div>
+                <div className="col-4">
+                    <span className="dot">
+                        <p>Option3</p>
+                    </span>
                 </div>
             </div>
         </div>
