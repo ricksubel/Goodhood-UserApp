@@ -5,20 +5,29 @@ class CreatePost extends Component {
     constructor(props) {
         super(props);
 
-        this.onChangeCreatePosttype = this.onChangeCreatePosttype.bind(this);
+        // TODO this.onChangeCreatePostCity = this.onChangeCreatePostCity.bind(this);
+        this.onChangeCreatePostType = this.onChangeCreatePostType.bind(this);
         this.onChangeCreatePostDescription = this.onChangeCreatePostDescription.bind(this);
         this.onChangeCreatePostResponsible = this.onChangeCreatePostResponsible.bind(this);
         this.onSubmit = this.onSubmit.bind(this);
 
         this.state = {
+
+            // TODO CreatePost_city: '',
             CreatePost_type: '',
             CreatePost_description: '',
-            CreatePost_responsible: '',
             CreatePost_completed: false
         }
     }
 
-    onChangeCreatePosttype(e) {
+    // TODO 
+    // onChangeCreatePostCity(e) {
+    //     this.setState({
+    //         CreatePost_type: e.target.value
+    //     });
+    // }
+
+    onChangeCreatePostType(e) {
         this.setState({
             CreatePost_type: e.target.value
         });
@@ -40,14 +49,14 @@ class CreatePost extends Component {
         e.preventDefault();
         
         console.log(`Form submitted:`);
+        // TODO console.log(`CreatePost Type: ${this.state.CreatePost_city}`);
         console.log(`CreatePost Type: ${this.state.CreatePost_type}`);
         console.log(`CreatePost Description: ${this.state.CreatePost_description}`);
-        console.log(`CreatePost Responsible: ${this.state.CreatePost_responsible}`);
         
         this.setState({
+            // TODO CreatePost_city: '',
             CreatePost_type: '',
             CreatePost_description: '',
-            CreatePost_responsible: '',
             CreatePost_completed: false
         })
     }
@@ -94,6 +103,7 @@ class CreatePost extends Component {
                             </div>
                         </div>
                         <div className="form-group"> 
+                        {/* TODO create a dropdown or auto-fill line for Cities */}
                             <label>Description: </label>
                             <input  type="text"
                                     className="form-control"
