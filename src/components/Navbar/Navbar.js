@@ -1,16 +1,16 @@
 import React from 'react';
 import { Link } from "react-router-dom";
-
-import "bootstrap/dist/css/bootstrap.min.css";
+import Logo from './images/hand-logo.png';
 import './Navbar.css';
 
 function Navbar() {
 
         return (
+            // TODO add hamburger response to navbar
             <div className="navbar">
                 <nav className="navbar fixed-top navbar-expand-sm navbar-light bg-light">
                     <a className="navbar-brand" href="/">
-                        <img src="/images/hand-logo.png" width="30" height="30" alt="hands connecting" />
+                        <img src={Logo} width="30" height="30" alt="hands connecting" />
                     </a>
                     <div className="collapse navbar-collapse">
                         <ul className="navbar-nav mr-auto">

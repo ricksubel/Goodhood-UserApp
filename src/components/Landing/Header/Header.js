@@ -9,7 +9,7 @@ function Header() {
             <header className="container">
                 <div>
                     <h1>Welcome to Goodhood!</h1>
-                    <h3>A Lifestyle Magazine</h3>
+                    <h6>Making a Difference Everyday Everywhere!</h6>
                 </div>
             </header>
     );

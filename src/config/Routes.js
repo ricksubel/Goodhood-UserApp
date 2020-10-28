@@ -1,9 +1,10 @@
 import React from "react";
 import { Switch, Route } from "react-router-dom";
+import Landing from '../components/Landing/Landing';
 import About from '../components/About/About';
 import ForHelp from '../components/ForHelp/ForHelp';
 import ToHelp from '../components/ToHelp/ToHelp';
-import Landing from '../components/Landing/Landing';
+import Create from '../components/Posts/Create-Posts'
 
 
 const Routes = (props) => {
@@ -15,6 +16,8 @@ const Routes = (props) => {
             <Route exact path='/about' component={About} />
             <Route exact path='/for-help' component={ForHelp} />
             <Route exact path='/to-help' component={ToHelp} />
+            <Route exact path='/create' component={Create} />
+
             {/* {loggedIn && (
             <Switch>
                 <Route path='/games/new' component={NewGame} />

@@ -1,25 +1,24 @@
 import React from 'react';
 import Header from './Header/Header';
-import "bootstrap/dist/css/bootstrap.min.css";
 import './Landing.css';
 
 
 function Landing() {
 
     return (
-        <div className="landing-container">
+        <div className="container-fluid">
             <div className="row">
                 <Header />
             </div>
             <div className="row">
-                <div className="col-sm">
-                <p>One of three columns</p>    
+                <div className="col-4 align-self-right">
+                    <div className="dot">Option1</div>
                 </div>
-                <div className="col-sm">
-                <p>One of three columns</p> 
+                <div className="col-4 align-self-center">
+                    <div className="dot">Option1</div>
                 </div>
-                <div className="col-sm">
-                <p>One of three columns</p> 
+                <div className="col-4 align-self-left">
+                    <div className="dot">Option1</div>
                 </div>
             </div>
         </div>

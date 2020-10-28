@@ -2,6 +2,15 @@ p {
     color:black;
 }
 
-.landing-container {
+.container-fluid {
     margin-top: 100px;
 }
+
+.dot {
+    text-align: center;
+    height: 100px;
+    width: 100px;
+    background-color: #bbb;
+    border-radius: 50%;
+    display: inline-block;
+  }
