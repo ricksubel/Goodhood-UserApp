@@ -7,6 +7,7 @@ class CreatePost extends Component {
 
         this.onChangeCreatePostType = this.onChangeCreatePostType.bind(this);
         this.onChangeCreatePostCity = this.onChangeCreatePostCity.bind(this);
+        this.onChangeCreatePostTitle = this.onChangeCreatePostTitle.bind(this);
         this.onChangeCreatePostDescription = this.onChangeCreatePostDescription.bind(this);
         this.onSubmit = this.onSubmit.bind(this);
 
@@ -14,6 +15,7 @@ class CreatePost extends Component {
 
             CreatePost_type: '',
             CreatePost_city: '',
+            CreatePost_title: '',
             CreatePost_description: '',
         }
     }
@@ -31,6 +33,11 @@ class CreatePost extends Component {
         });
     }
 
+    onChangeCreatePostTitle(e) {
+        this.setState({
+            CreatePost_type: e.target.value
+        });
+    }
 
     onChangeCreatePostDescription(e) {
         this.setState({
@@ -44,19 +51,20 @@ class CreatePost extends Component {
         console.log(`Form submitted:`);
         console.log(`CreatePost Type: ${this.state.CreatePost_type}`);
         console.log(`CreatePost City: ${this.state.CreatePost_city}`);
+        console.log(`CreatePost Title: ${this.state.CreatePost_title}`);
         console.log(`CreatePost Description: ${this.state.CreatePost_description}`);
         
         this.setState({
             CreatePost_type: '',
             CreatePost_city: '',
+            CreatePost_title: '',
             CreatePost_description: '',
         })
     }
 
     render() {
         return (
-            <div className="container">
-                <div style={{marginTop: 100}}>
+            <div className="container p-3">
                     <h3>Create New Post</h3>
                     <form onSubmit={this.onSubmit}>
                         <div className="form-group">
@@ -88,7 +96,7 @@ class CreatePost extends Component {
                                         name="typeOptions" 
                                         id="typeGeneral" 
                                         value="General" 
-                                        checked={this.state.CreatePost_type==='Neighborhood Suggestion'} 
+                                        checked={this.state.CreatePost_type==='General Suggestion'} 
                                         onChange={this.onChangeCreatePostType}
                                         />
                                 <label className="form-check-label">Neighborhood Suggestions</label>
@@ -106,6 +114,14 @@ class CreatePost extends Component {
                             </div>
                         </div>
                         <div className="form-group"> 
+                            <label>Title: </label>
+                            <input  type="text"
+                                    className="form-control"
+                                    value={this.state.CreatePost_title}
+                                    onChange={this.onChangeCreatePostTitle}
+                                    />
+                        </div>
+                        <div className="form-group"> 
                             <label>Description: </label>
                             <input  type="text"
                                     className="form-control"
@@ -114,13 +130,70 @@ class CreatePost extends Component {
                                     />
                         </div>
                         <div className="form-group">
-                            <input type="submit" value="Create CreatePost" className="btn bt-sm btn-primary" />
+                            <input type="submit" value="Post" className="btn bt-sm btn-primary" />
                         </div>
                     </form>
-                </div>
             </div>
         )
     }
 }
 
 export default CreatePost;
+
+// import React, { useState } from "react";
+// import PostModel from "../models/PostModel";
+
+// function NewPost(props) {
+//     const [type, setType] = useState("");
+//     const [city, setCity] = useState("");
+//     const [description, setDescription] = useState("");
+
+//     function handleSubmit(event) {
+//         event.preventDefault();
+
+//         PostModel.create({ type, city, description }).then(
+//         (data) => {
+//             props.history.push("/Posts");
+//         }
+//         );
+//     }
+
+// return (
+//     <div>
+//         <h2>New Post</h2>
+//         <form onSubmit={handleSubmit}>
+//             <div className='form-input'>
+//             <label htmlFor='type'>type</label>
+//             <input
+//                 type='text'
+//                 name='type'
+//                 onChange={(e) => setType(e.target.value)}
+//                 value={type}
+//             />
+//             </div>
+//             <div className='form-input'>
+//             <label htmlFor='city'>city</label>
+//             <input
+//                 type='text'
+//                 name='city'
+//                 onChange={(e) => setCity(e.target.value)}
+//                 value={city}
+//             />
+//             </div>
+//             <div className='form-input'>
+//             <label htmlFor='description'>Image URL</label>
+//             <input
+//                 type='text'
+//                 name='description'
+//                 onChange={(e) => setDescription(e.target.value)}
+//                 value={description}
+//             />
+//             </div>
+
+//             <input type='submit' value='Save!' />
+//         </form>
+//         </div>
+//     );
+// }
+
+// export default NewPost;

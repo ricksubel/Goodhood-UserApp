@@ -19,7 +19,7 @@ function Login(props) {
         UserModel.show().then((response) => {
             console.log(response)
             setUser(response.data);
-            props.history.push("/posts");
+            props.history.push("/profile:id");
         });
         });
     }
