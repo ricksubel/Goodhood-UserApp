@@ -32,4 +32,4 @@ class PostModel {
     }
 }
 
-export default postModel
+export default PostModel;
