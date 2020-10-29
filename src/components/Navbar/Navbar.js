@@ -11,6 +11,7 @@ import './Navbar.css';
 
 const Navbar = (props) => {
     const [user, setUser] = useRecoilState(userState);
+    console.log(user);
 
     useEffect(function () {
         if (localStorage.uid)
@@ -30,10 +31,14 @@ const Navbar = (props) => {
             // TODO add hamburger response to navbar
             <div className="navbar">
                 <nav className="navbar fixed-top navbar-expand-sm navbar-light bg-light">
-                    <a className="navbar-brand" href="/">
-                        <img src={Logo} width="30" height="30" alt="hands connecting" />
-                    </a>
-                    <div className="collapse navbar-collapse">
+                    {/* TODO fix this on collapse */}
+                    <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo01" aria-controls="navbarTogglerDemo01" aria-expanded="false" aria-label="Toggle navigation">
+                    <span className="navbar-toggler-icon"></span>
+                    </button>
+                    <div className="collapse navbar-collapse" id="navbarTogglerDemo01">
+                        <a className="navbar-brand" href="/">
+                            <img src={Logo} width="30" height="30" alt="hands connecting" />
+                        </a>
                         <ul className="navbar-nav mr-auto">
                             <li className="navbar-item">
                                 <Link to="/about" className="nav-link">About</Link>
@@ -43,12 +48,13 @@ const Navbar = (props) => {
                             </li>
                             <li className="navbar-item">
                                 <Link to="/to-help" className="nav-link">Here to Help</Link>
-                            </li> 
-                            {user ? (
+                            </li>
+                        </ul>
+                        <ul className="navbar-nav float-right">
+                        {user ? (
                             <>
-                            <li className="navbar-item">{user.username}</li>
                             <li className="navbar-item">
-                                <Link to={"/profile"}>Profile</Link>
+                                <Link to={"/profile:id"} className="nav-link">My Profile</Link>
                             </li>
                             <li className='btn' onClick={logout}>
                                 Log Out
@@ -57,10 +63,10 @@ const Navbar = (props) => {
                         ) : (
                             <>
                             <li className="navbar-item">
-                                <Link to={"/login"}>Login</Link>
+                                <Link to={"/login"} className="nav-link">Login</Link>
                             </li>
                             <li className="navbar-item">
-                                <Link to={"/register"}>Register</Link>
+                                <Link to={"/register"} className="nav-link">Register</Link>
                             </li>
                             </>
                         )}                    

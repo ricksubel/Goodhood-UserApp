@@ -4,12 +4,14 @@
 
 .dot {
     text-align: center;
-    vertical-align: middle;
+    display: flex;
+    /* display: inline-block; */
+    flex-direction: column;
+    justify-content: center;
     height: 100px;
     width: 100px;
-    background-color: #bbb;
+    background-color: rgba(0, 115, 255, 0.742);
     border-radius: 50%;
-    display: inline-block;
 }
 
 .col-4 {

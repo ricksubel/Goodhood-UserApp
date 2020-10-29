@@ -1,5 +1,7 @@
 import React from 'react';
 import Header from './Header/Header';
+import Footer from './Footer/Footer';
+
 import './Landing.css';
 
 
@@ -10,23 +12,30 @@ function Landing() {
             <div className="row text-center">
                 <Header />
             </div>
-            <div className="container d-flex justify-content-center text-center mt-5">
-                <div className="col-4 align-self-center">
-                    <span className="dot">
-                        <p className=" my-auto">Option1</p>
-                    </span>
-                </div>
-                <div className="col-4">
-                    <span className="dot">
-                        <p>Option2</p>
-                    </span>
-                </div>
-                <div className="col-4">
-                    <span className="dot">
-                        <p>Option3</p>
-                    </span>
+
+            <div className="row-fluid">
+                <div className="container d-flex justify-content-center mt-5">
+                    <div className="col-sm">
+                        <span className="dot">
+                            <p className="my-auto">Option1</p>
+                        </span>
+                    </div>
+                    <div className="col-sm">
+                        <span className="dot">
+                            <p className="my-auto">Option2</p>
+                        </span>
+                    </div>
+                    <div className="col-sm">
+                        <span className="dot">
+                            <p className="my-auto">Option3</p>
+                        </span>
+                    </div>
                 </div>
             </div>
+            {/* TODO fix image size */}
+            {/* <div className="row-fluid">
+                <Footer />
+            </div> */}
         </div>
 
     )

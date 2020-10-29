@@ -1,5 +1,6 @@
 import React from "react";
 import { Switch, Route } from "react-router-dom";
+
 import Landing from '../components/Landing/Landing';
 import About from '../components/About/About';
 import ForHelp from '../components/ForHelp/ForHelp';
@@ -8,6 +9,7 @@ import Create from '../components/Posts/Create-Posts'
 import Register from "../pages/Register";
 import Login from "../pages/Login";
 import Profile from "../pages/UserProfile";
+
 import { useRecoilValue } from "recoil";
 import { loggedInState } from "../recoil/selectors";
 
@@ -26,8 +28,8 @@ const Routes = (props) => {
 
             {loggedIn && (
                 <Switch>
+                <Route exact path='/profile:id' component={Profile} />
                 <Route exact path='/create' component={Create} />
-                <Route exact path='/profile' component={Profile} />
 
                 {/* <Route path='/games/new' component={NewGame} />
                 <Route path='/games/:id/edit' component={EditGame} />

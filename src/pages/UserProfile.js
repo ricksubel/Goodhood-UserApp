@@ -1,10 +1,22 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 
-const Profile = () => {
+import { useRecoilState } from "recoil";
+import { userState } from "../recoil/atoms";
+
+import Navbar from '../components/Navbar/Navbar';
+
+
+const Profile = (props) => {
+    const [user] = useRecoilState(userState);
+
     return (
         <div>
-            <h1>User Profile Information</h1>
+            <Navbar />
+            <div className="container mt-5">
+                <h3>Welcome, {user.username}!</h3>
+            </div>
         </div>
+        
     );
 }
 
