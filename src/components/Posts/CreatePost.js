@@ -74,8 +74,10 @@ class CreatePost extends Component {
                                         name="typeOptions" 
                                         id="typeNeed" 
                                         value="Need"
+                                        // TODO Make Radio Buttons selectable
                                         checked={this.state.CreatePost_type==='Needing Help'} 
                                         onChange={this.onChangeCreatePostType}
+                                        
                                         />
                                 <label className="form-check-label">Needing Help</label>
                             </div>
@@ -104,16 +106,20 @@ class CreatePost extends Component {
                         </div>
                         {/* TODO Dropdown City */}
                         <div class="dropdown show">
-                            <a class="btn btn-secondary dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        <select class="form-control form-control-sm">
+                            <option role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Select City</option>
+                        </select>
+                            {/* <a class="btn btn-secondary btn-sm dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                 City
-                            </a>
+                            </a> */}
+                            {/* TODO Make dropdown populated by Cities */}
                             <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
                                 <a class="dropdown-item" href="">Action</a>
                                 <a class="dropdown-item" href="">Another action</a>
                                 <a class="dropdown-item" href="">Something else here</a>
                             </div>
                         </div>
-                        <div className="form-group"> 
+                        <div className="form-group mt-3"> 
                             <label>Title: </label>
                             <input  type="text"
                                     className="form-control"
@@ -123,14 +129,14 @@ class CreatePost extends Component {
                         </div>
                         <div className="form-group"> 
                             <label>Description: </label>
-                            <input  type="text"
+                            <textarea  type="text"
                                     className="form-control"
                                     value={this.state.CreatePost_description}
                                     onChange={this.onChangeCreatePostDescription}
                                     />
                         </div>
-                        <div className="form-group">
-                            <input type="submit" value="Post" className="btn bt-sm btn-primary" />
+                        <div className="form-group text-center">
+                            <input type="submit" value="Post" className="btn btn-sm btn-primary" />
                         </div>
                     </form>
             </div>

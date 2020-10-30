@@ -1,16 +1,18 @@
 import React, { Component } from 'react';
+
 import { Modal } from 'react-bootstrap';
 import CreatePost from '../Posts/CreatePost';
 import './ForHelp.css';
 
 class ForHelp extends Component {
+
     state = {
         isOpen: false
     };
 
     openModal = () => this.setState({ isOpen: true });
     closeModal = () => this.setState({ isOpen: false });
-  
+
     render() {
         return (
             <div className="container-fluid">
@@ -23,12 +25,12 @@ class ForHelp extends Component {
                             <div className="container">
                                 <h3>Let's find you the help you need!</h3>
                                 <button type="button" class="btn btn-outline-primary btn-circle btn-sm float-right" onClick={this.openModal}><i class="fas fa-plus"></i></button> 
-                                
+
                                 <Modal show={this.state.isOpen} onHide={this.closeModal}>
                                     <CreatePost />
                                 </Modal>
-                            </div>
 
+                            </div>
 
                             <div className="container mt-5">
                                 <p className="post text-truncate">
