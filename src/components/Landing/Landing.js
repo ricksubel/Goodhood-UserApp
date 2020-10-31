@@ -12,9 +12,7 @@ function Landing() {
             <div className="row text-center">
                 <Header />
             </div>
-
-            <div className="row-fluid">
-                <div className="container d-flex justify-content-center mt-5">
+            <div className="container d-flex align-content-center mt-5">
                     <div className="col-sm">
                         <span className="dot">
                             <p className="my-auto">Option1</p>
@@ -30,8 +28,8 @@ function Landing() {
                             <p className="my-auto">Option3</p>
                         </span>
                     </div>
-                </div>
             </div>
+
             {/* TODO fix image size */}
             {/* <div className="row-fluid">
                 <Footer />

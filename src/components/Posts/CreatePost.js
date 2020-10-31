@@ -1,11 +1,13 @@
-import React, { useState } from 'react';
+import React, { useState, Component } from 'react';
 import { Container, Form, Button } from 'react-bootstrap';
 import axios from 'axios';
 
 import PostModel from '../../models/PostModel';
 
 const CreatePost = (props) => {
-    const allCities = ['a','b','c']
+    const allCities = ['Atlanta','Boston','Chicago'];
+    // const allCities = axios(`http://localhost:3001/api/v1/cities/getCity`);
+    console.log(allCities);
 
     const [type, setType] = useState('') 
     const [city, setCity] = useState('') 

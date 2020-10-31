@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Modal } from 'react-bootstrap';
+import { Modal, Container,  } from 'react-bootstrap';
 import CreatePost from '../Posts/CreatePost';
 import './ToHelp.css';
 
@@ -15,11 +15,11 @@ class ToHelp extends Component {
         return (
             <div className="container-fluid">
                 <div className="row fullscreen">
-                    <div className="col-3" style={{ backgroundColor: "aqua"}}>
+                    <div className="col-3 pt-5" style={{ backgroundColor: "aqua"}}>
                         Left Sidebar
                     </div>
                     
-                    <div className="col-6">
+                    <div className="col-6 pt-5">
                         <div className="container">
                             <h3>Let's help someone!</h3>
                             <button type="button" class="btn btn-outline-primary btn-circle btn-sm float-right" onClick={this.openModal}><i class="fas fa-plus"></i></button> 
@@ -41,7 +41,7 @@ class ToHelp extends Component {
                     </div>    
             
 
-                    <div className="col-3" style={{ backgroundColor: "aqua"}}>
+                    <div className="col-3 pt-5" style={{ backgroundColor: "aqua"}}>
                         Right Sidebar
                     </div>
                     
