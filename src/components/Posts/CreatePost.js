@@ -31,6 +31,7 @@ const CreatePost = (props) => {
     }
 
     return (   
+        <>
             <Container>
                 {/* <FormWrap> */}
                     <h3>Create New Post</h3>
@@ -86,6 +87,7 @@ const CreatePost = (props) => {
                     </Form>
                 {/* </FormWrap> */}
             </Container>
+        </>
     )
 }
 
