@@ -5,11 +5,12 @@ function Register(props) {
     const [username, setUsername] = useState("");
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
+    const [city, setCity] = useState("");
 
     function handleSubmit(event) {
         event.preventDefault();
         // send register request and on success redirect to login
-        AuthModel.register({ username, email, password }).then((response) => {
+        AuthModel.register({ username, email, password, city }).then((response) => {
         if (response.status === 201) {
             props.history.push("/login");
         }
@@ -45,6 +46,15 @@ return (
                 name='password'
                 onChange={(e) => setPassword(e.target.value)}
                 value={password}
+            />
+            </div>
+            <div className='form-input'>
+            <label htmlFor='city'>Your City</label>
+            <input
+                type='text'
+                name='city'
+                onChange={(e) => setCity(e.target.value)}
+                value={city}
             />
             </div>
 
