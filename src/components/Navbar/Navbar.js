@@ -18,7 +18,7 @@ const Navbar = (props) => {
         UserModel.show().then((response) => {
             setUser(response.data);
         });
-    }, setUser);
+    }, [setUser]);
 
     function logout() {
         setUser(null);

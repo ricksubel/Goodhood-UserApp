@@ -1,9 +1,12 @@
 import React, { useState } from 'react';
 import { Container, Form, Button } from 'react-bootstrap';
+import axios from 'axios';
+
 import PostModel from '../../models/PostModel';
 
 const CreatePost = (props) => {
-    const [allCities, setAllCities] = useState([])
+    const allCities = ['a','b','c']
+
     const [type, setType] = useState('') 
     const [city, setCity] = useState('') 
     const [title, setTitle] = useState('') 
@@ -21,8 +24,8 @@ const CreatePost = (props) => {
 
     return (   
         <Container>
-            <Form.Wrap>
-                <h3>Create New Post</h3>
+            <h3>Create New Post</h3>
+            {allCities.length > 0 ? 
                 <Form onSubmit={handleSubmit}>
                     <Form.Group>
                         <Form.Check inline label="Needing Help"
@@ -50,10 +53,9 @@ const CreatePost = (props) => {
                     <Form.Group>
                         <Form.Label>Select City</Form.Label>
                         <Form.Control as="select" onChange={(e)=> setCity(e.target.value)}>
-                            {allCities.length ? allCities.map(city => {
+                            {allCities.length > 0 ? allCities.map(city => {
                             return <option value={city.id} key={city.id}>{city.city}, {city.regionCode}</option>    
-                            }):
-                            null}
+                            }): null}
                         </Form.Control>
                     </Form.Group>
                     <Form.Group>
@@ -65,10 +67,10 @@ const CreatePost = (props) => {
                         <Form.Control as="textarea" rows={3} onChange={(e)=> setDescription(e.target.value)}/>
                     </Form.Group>
                     <Form.Group>
-                        <Button type="submit" value="Post"></Button>
+                        <Button type="submit" value="Post">Submit Post</Button>
                     </Form.Group>
                 </Form>
-            </Form.Wrap>
+            :null}
         </Container>
     )
 }
