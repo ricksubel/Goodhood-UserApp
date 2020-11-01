@@ -7,8 +7,8 @@ class CityModel {
         return axios.get(URL).then(response => response.json());
     }
 
-    static show = (cityID) => {
-        return axios.get(`${URL}/refApi`).then(response => response.data)
+    static show = (cityId) => {
+        return axios.get(`${URL}/cityId`).then(response => response.data)
     }
 
     static create = (cityData) => {
@@ -22,7 +22,7 @@ class CityModel {
         .then(response => response.json());
     }
 
-    static edit = (cityID, cityData) => {
+    static edit = (cityId, cityData) => {
         return axios.get(`${URL}/${cityId}`, {
             method: "PUT",
             headers: {
