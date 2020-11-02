@@ -8,7 +8,7 @@ import ToHelp from '../components/ToHelp/ToHelp';
 import Register from "../pages/Register";
 import Login from "../pages/Login";
 import Profile from "../pages/UserProfile";
-import Create from '../components/Posts/CreatePost'
+import CreatePost from '../components/Posts/CreatePost'
 
 import { useRecoilValue } from "recoil";
 import { loggedInState } from "../recoil/selectors";
@@ -30,7 +30,7 @@ const Routes = (props) => {
             {loggedIn && (
                 <Switch>
                 <Route exact path='/profile:id' component={Profile} />
-                <Route exact path='/create' component={Create} />
+                <Route exact path='/create' component={CreatePost} />
 
                 {/* <Route path='/games/:id/edit' component={EditGame} />
                 <Route path='/games/:id' component={GameShow} />

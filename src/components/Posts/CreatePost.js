@@ -1,28 +1,34 @@
 import React, { useState } from 'react';
 import { Container, Form, Button } from 'react-bootstrap';
+// import axios from 'axios';
+import cityList from '../Cities/cities';
+
 import PostModel from '../../models/PostModel';
+import useCities from "../../hooks/useCities";
+
 
 const CreatePost = (props) => {
-    const [allCities, setAllCities] = useState([])
+    
+
     const [type, setType] = useState('') 
     const [city, setCity] = useState('') 
     const [title, setTitle] = useState('') 
-    const [description, setDescription] = useState('') 
+    const [message, setMessage] = useState('') 
 
-    const formData = { type, city, title, description } 
+    const formData = { type, city, title, message } 
 
     const handleSubmit = (event) => {
         event.preventDefault();
+
         PostModel.create(formData).then((data) => {
-                props.history.push("/posts");
-            }
-        );
+            props.history.push("/:id");
+        });
     }
 
     return (   
         <Container>
-            <Form.Wrap>
-                <h3>Create New Post</h3>
+            <h3>Create New Post</h3>
+            {/* {allCities.length > 0 ?  */}
                 <Form onSubmit={handleSubmit}>
                     <Form.Group>
                         <Form.Check inline label="Needing Help"
@@ -50,10 +56,10 @@ const CreatePost = (props) => {
                     <Form.Group>
                         <Form.Label>Select City</Form.Label>
                         <Form.Control as="select" onChange={(e)=> setCity(e.target.value)}>
-                            {allCities.length ? allCities.map(city => {
-                            return <option value={city.id} key={city.id}>{city.city}, {city.regionCode}</option>    
-                            }):
-                            null}
+                            {/* TODO fix this!!! */}
+                            {cityList > 0 ? cityList.map(city => {
+                            return <option value={city.id} key={city.id}>{city.city}, {city.state}</option>    
+                            }): null}
                         </Form.Control>
                     </Form.Group>
                     <Form.Group>
@@ -61,14 +67,14 @@ const CreatePost = (props) => {
                             <Form.Control type="text" onChange={(e)=> setTitle(e.target.value)}/>
                     </Form.Group>
                     <Form.Group> 
-                        <Form.Label>Description: </Form.Label>
-                        <Form.Control as="textarea" rows={3} onChange={(e)=> setDescription(e.target.value)}/>
+                        <Form.Label>Message: </Form.Label>
+                        <Form.Control as="textarea" rows={3} onChange={(e)=> setMessage(e.target.value)}/>
                     </Form.Group>
                     <Form.Group>
-                        <Button type="submit" value="Post"></Button>
+                        <Button type="submit" value="Post">Submit Post</Button>
                     </Form.Group>
                 </Form>
-            </Form.Wrap>
+            {/* :null} */}
         </Container>
     )
 }

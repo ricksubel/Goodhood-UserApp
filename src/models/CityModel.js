@@ -1,13 +1,37 @@
 const URL = "http://localhost:3001/api/v1/cities";
 
 class CityModel {
-    static getCities() {
-        return fetch(`${URL}/geodb`, {
-        method: "GET",
-        // here we send the token as Bearer Token
-        headers: { authorization: `Bearer ${localStorage.uid}` },
-        }).then((response) => response.json());
+    static all = () => {
+        return fetch(URL).then(response => response.json());
     }
+
+    static show = (cityId) => {
+        return fetch(`${URL}/cityId`).then(response => response.data)
+    }
+
+    static create = (cityData) => {
+        return fetch(URL, {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify(cityData)
+        })
+        .then(response => response.json());
+    }
+
+    static edit = (cityId, cityData) => {
+        return fetch(`${URL}/${cityId}`, {
+            method: "PUT",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify(cityData)
+        })
+        .then(response => response.json());
+    }
+
 }
 
 export default CityModel;
+
