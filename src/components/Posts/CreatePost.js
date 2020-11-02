@@ -8,7 +8,8 @@ import useCities from "../../hooks/useCities";
 
 
 const CreatePost = (props) => {
-    
+    // TODO do I use a hook???
+    // const [cityList] = useCities();
 
     const [type, setType] = useState('') 
     const [city, setCity] = useState('') 
