@@ -1,4 +1,6 @@
 import React, { useState } from "react";
+import { Container, Form, Button } from 'react-bootstrap';
+
 import AuthModel from "../models/AuthModel";
 
 function Register(props) {
@@ -11,56 +13,57 @@ function Register(props) {
         event.preventDefault();
         // send register request and on success redirect to login
         AuthModel.register({ username, email, password, city }).then((response) => {
-        if (response.status === 201) {
-            props.history.push("/login");
-        }
+            if (response.status === 201) {
+                props.history.push("/login");
+            }
         });
     }
 
 return (
-    <div>
-        <h2>Register for an Account!</h2>
-        <form onSubmit={handleSubmit}>
-            <div className='form-input'>
-            <label htmlFor='username'>Username</label>
-            <input
-                type='text'
-                name='username'
-                onChange={(e) => setUsername(e.target.value)}
-                value={username}
-            />
-            </div>
-            <div className='form-input'>
-            <label htmlFor='email'>Email</label>
-            <input
-                type='text'
-                name='email'
-                onChange={(e) => setEmail(e.target.value)}
-                value={email}
-            />
-            </div>
-            <div className='form-input'>
-            <label htmlFor='password'>Password</label>
-            <input
-                type='password'
-                name='password'
-                onChange={(e) => setPassword(e.target.value)}
-                value={password}
-            />
-            </div>
-            <div className='form-input'>
-            <label htmlFor='city'>Your City</label>
-            <input
-                type='text'
-                name='city'
-                onChange={(e) => setCity(e.target.value)}
-                value={city}
-            />
-            </div>
-
-            <input type='submit' value='Register' />
-        </form>
-        </div>
+    <Container>
+        <h4>User Registration</h4>
+        <Form onSubmit={handleSubmit}>
+            <Form.Group>
+                <Form.Label htmlFor='username'>Username</Form.Label>
+                <Form.Control
+                    type='text'
+                    name='username'
+                    onChange={(e) => setUsername(e.target.value)}
+                    value={username}
+                />
+            </Form.Group>
+            <Form.Group>
+                <Form.Label htmlFor='email'>Email</Form.Label>
+                <Form.Control
+                    type='text'
+                    name='email'
+                    onChange={(e) => setEmail(e.target.value)}
+                    value={email}
+                />
+            </Form.Group>
+            <Form.Group>
+                <Form.Label htmlFor='password'>Password</Form.Label>
+                <Form.Control
+                    type='password'
+                    name='password'
+                    onChange={(e) => setPassword(e.target.value)}
+                    value={password}
+                />
+            </Form.Group>
+            <Form.Group>
+                <Form.Label htmlFor='city'>Your City</Form.Label>
+                <Form.Control
+                    type='text'
+                    name='city'
+                    onChange={(e) => setCity(e.target.value)}
+                    value={city}
+                />
+            </Form.Group>
+            <Form.Group>
+                <Button type='submit' value='Register'>Register</Button>
+            </Form.Group>
+        </Form>
+    </Container>
     );
 }
 

@@ -1,7 +1,23 @@
-.fullscreen {
-    min-height: 100vh;
+.posts {
+    padding-top: 30px;
 }
 
 .post {
-    margin-top: 10px;
+    margin-top: 0px;
+}
+
+.btn-circle.btn-sm { 
+    width: 30px; 
+    height: 30px; 
+    padding: 6px 0px; 
+    border-radius: 15px; 
+    font-size: 8px; 
+    text-align: center; 
+}
+
+.side-info {
+    background-color: aqua;
+    padding-top: 30px;
+    padding-bottom: 30px;
+    min-height: auto;
 }

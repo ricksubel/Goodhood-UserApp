@@ -1,14 +1,14 @@
-import React, { useState, Component } from 'react';
+import React, { useState } from 'react';
 import { Container, Form, Button } from 'react-bootstrap';
-import axios from 'axios';
+// import axios from 'axios';
+import cityList from '../Cities/cities';
 
 import PostModel from '../../models/PostModel';
+import useCities from "../../hooks/useCities";
 
 
 const CreatePost = (props) => {
-    // const allCities = ['Atlanta','Boston','Chicago'];
-    // const allCities = axios(`http://localhost:3001/api/v1/cities/refApi`);
-    // console.log(allCities);
+    
 
     const [type, setType] = useState('') 
     const [city, setCity] = useState('') 
@@ -19,10 +19,10 @@ const CreatePost = (props) => {
 
     const handleSubmit = (event) => {
         event.preventDefault();
+
         PostModel.create(formData).then((data) => {
-                props.history.push("/for-help");
-            }
-        );
+            props.history.push("/:id");
+        });
     }
 
     return (   
@@ -55,12 +55,12 @@ const CreatePost = (props) => {
                     </Form.Group>
                     <Form.Group>
                         <Form.Label>Select City</Form.Label>
-                        <Form.Control type="text" onChange={(e)=> setCity(e.target.value)}/>
-                        {/* <Form.Control as="select" onChange={(e)=> setCity(e.target.value)}>
-                            {allCities.length > 0 ? allCities.map(city => {
-                            return <option value={city.id} key={city.id}>{city.city}, {city.regionCode}</option>    
+                        <Form.Control as="select" onChange={(e)=> setCity(e.target.value)}>
+                            {/* TODO fix this!!! */}
+                            {cityList > 0 ? cityList.map(city => {
+                            return <option value={city.id} key={city.id}>{city.city}, {city.state}</option>    
                             }): null}
-                        </Form.Control> */}
+                        </Form.Control>
                     </Form.Group>
                     <Form.Group>
                             <Form.Label>Title:</Form.Label>

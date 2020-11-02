@@ -1,18 +1,16 @@
-import axios from 'axios';
-
 const URL = "http://localhost:3001/api/v1/cities";
 
 class CityModel {
     static all = () => {
-        return axios.get(URL).then(response => response.json());
+        return fetch(URL).then(response => response.json());
     }
 
     static show = (cityId) => {
-        return axios.get(`${URL}/cityId`).then(response => response.data)
+        return fetch(`${URL}/cityId`).then(response => response.data)
     }
 
     static create = (cityData) => {
-        return axios.get(URL, {
+        return fetch(URL, {
             method: "POST",
             headers: {
                 "Content-Type": "application/json"
@@ -23,7 +21,7 @@ class CityModel {
     }
 
     static edit = (cityId, cityData) => {
-        return axios.get(`${URL}/${cityId}`, {
+        return fetch(`${URL}/${cityId}`, {
             method: "PUT",
             headers: {
                 "Content-Type": "application/json"

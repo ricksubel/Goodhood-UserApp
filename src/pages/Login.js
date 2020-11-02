@@ -1,6 +1,9 @@
 import React, { useState } from "react";
+import { Container, Form, Button } from 'react-bootstrap';
+
 import AuthModel from "../models/AuthModel";
 import UserModel from "../models/UserModel";
+
 import { useSetRecoilState } from "recoil";
 import { userState } from "../recoil/atoms.js";
 
@@ -26,40 +29,32 @@ function Login(props) {
 
 
 return (
-    <div className="container">
-        <div style={{marginTop: 100}}>
-            <h3>Login</h3>
-            <form onSubmit={handleSubmit}>
-                <div className="form-group">
-                    <div className='form-input'>
-                    <label>Email</label>
-                    <input
-                        className="form-control"
+    <Container>
+            <h4>Login</h4>
+            <Form onSubmit={handleSubmit}>
+                <Form.Group>
+                    <Form.Label>Email</Form.Label>
+                    <Form.Control
                         type='text'
                         name='email'
                         onChange={(e) => setEmail(e.target.value)}
                         value={email}
                     />
-                    </div>
-                </div>
-                <div className="form-group">
-                    <div className='form-input'>
-                    <label>Password</label>
-                    <input
-                        className="form-control"
+                </Form.Group>
+                <Form.Group>
+                    <Form.Label>Password</Form.Label>
+                    <Form.Control
                         type='password'
                         name='password'
                         onChange={(e) => setPassword(e.target.value)}
                         value={password}
                     />
-                    </div>
-                </div>
-                <div className="form-group">
-                    <input type='submit' value='Login' />
-                </div>
-            </form>
-        </div>
-    </div>
+                </Form.Group>
+                <Form.Group>
+                    <Button type='submit' value='Login'>Login</Button>
+                </Form.Group>
+            </Form>
+    </Container>
     );
 }
 

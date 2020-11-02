@@ -29,7 +29,7 @@ class ToHelp extends Component {
                                         <Button variant="primary" size="sm">Go somewhere</Button>
                                     </Card.Body>
                                 </Card>
-                                <hr></hr>
+                                <hr/>
                                 <Card>
                                     <Card.Body>
                                         Ornare suspendisse sed nisi lacus sed viverra tellus. Egestas congue quisque egestas diam in arcu. Tincidunt augue interdum velit euismod in. Velit laoreet id donec ultrices tincidunt. Vel elit scelerisque mauris pellentesque pulvinar pellentesque habitant morbi tristique. Imperdiet sed euismod nisi porta lorem mollis aliquam.
@@ -44,7 +44,7 @@ class ToHelp extends Component {
                                 <Modal show={this.state.isOpen} onHide={this.closeModal}>
                                     <CreatePost />
                                 </Modal>
-                                <h3>Let's find you the help you need!</h3>
+                                <h3>Here's how you can help!</h3>
 
                             </Container>
 
