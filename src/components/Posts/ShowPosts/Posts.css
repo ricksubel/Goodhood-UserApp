@@ -6,7 +6,7 @@
     margin-top: 0px;
 }
 
-.btn-circle.btn-sm { 
+.btn-circle { 
     width: 30px; 
     height: 30px; 
     padding: 6px 0px; 
@@ -16,7 +16,7 @@
 }
 
 .side-info {
-    background-color: aqua;
+    background-color: rgb(123, 215, 249);
     padding-top: 30px;
     padding-bottom: 30px;
     min-height: auto;

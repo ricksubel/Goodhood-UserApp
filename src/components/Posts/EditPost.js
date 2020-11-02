@@ -1,17 +1,15 @@
-import React, { Component } from 'react';
-import './Posts.css';
+import React from 'react';
 
-class EditPosts extends Component {
-    render() {
-        return (
-            <div>
-                <p>Edit Posts Component!!</p>
-            </div>
-        )
-    }
+const EditPost = () => {
+
+    return (
+        <div>
+            <p>Edit Posts Component!!</p>
+        </div>
+    )
 }
 
-export default EditPosts;
+export default EditPost;
 
 // import React from 'react';
 // import GameModel from '../models/GameModel';
