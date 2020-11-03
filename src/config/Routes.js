@@ -3,12 +3,13 @@ import { Switch, Route } from "react-router-dom";
 
 import Landing from '../components/Landing/Landing';
 import About from '../components/About/About';
-import ForHelp from '../components/ForHelp/ForHelp';
-import ToHelp from '../components/ToHelp/ToHelp';
+import Posts from '../components/Posts/ShowPosts/Posts';
 import Register from "../pages/Register";
 import Login from "../pages/Login";
 import Profile from "../pages/UserProfile";
-import CreatePost from '../components/Posts/CreatePost'
+import CreatePost from '../components/Posts/CreatePost';
+import EditPost from '../components/Posts/EditPost';
+import PostScroll from '../components/Posts/ShowPosts/PostScroll';
 
 import { useRecoilValue } from "recoil";
 import { loggedInState } from "../recoil/selectors";
@@ -22,19 +23,16 @@ const Routes = (props) => {
         <Switch>
             <Route exact path='/' component={Landing} />
             <Route exact path='/about' component={About} />
-            <Route exact path='/for-help' component={ForHelp} />
-            <Route exact path='/to-help' component={ToHelp} />
+            <Route exact path='/neighborhood' component={Posts} />
             <Route exact path='/register' component={Register} />
             <Route exact path='/login' component={Login} />
 
             {loggedIn && (
-                <Switch>
-                <Route exact path='/profile:id' component={Profile} />
+            <Switch>
+                <Route path='/profile:id' component={Profile} />
                 <Route exact path='/create' component={CreatePost} />
-
-                {/* <Route path='/games/:id/edit' component={EditGame} />
-                <Route path='/games/:id' component={GameShow} />
-                <Route path='/games' component={GameList} /> */}
+                <Route path='/posts/:id/edit' component={EditPost} />
+                <Route path='/scroll' component={PostScroll} />
             </Switch>
             )}
             <Route path='*' render={() => <h1>"not found"</h1>} />

@@ -1,6 +1,7 @@
 import React from 'react';
 import { Container } from 'react-bootstrap';
 
+// TODO do I even need this???
 
 const Cities = (props) => {
     function cityList(cities) {

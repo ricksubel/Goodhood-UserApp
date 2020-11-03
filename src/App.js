@@ -3,7 +3,6 @@ import Routes from './config/Routes';
 import NavMain from "./components/Navbar/Navbar";
 
 
-
 function App() {
 
     return (
