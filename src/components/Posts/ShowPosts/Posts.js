@@ -1,11 +1,9 @@
 import React, { useState } from 'react';
 import PostScroll from './PostScroll';
-
+import CreatePost from '../CreatePost';
 import { Modal, Container, Col, Row, Card, Button } from 'react-bootstrap';
 import { faPlus } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-
-import CreatePost from '../CreatePost';
 import Love from './images/loveYN.jpg';
 import './Posts.css';
 

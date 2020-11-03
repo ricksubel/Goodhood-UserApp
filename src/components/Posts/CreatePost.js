@@ -3,10 +3,6 @@ import { Container, Form, Button, Accordion, Card } from 'react-bootstrap';
 
 import PostModel from '../../models/PostModel';
 
-import cityList from '../Cities/cities';
-import useCities from "../../hooks/useCities";
-import { faTag } from '@fortawesome/free-solid-svg-icons';
-
 
 const CreatePost = (props) => {
     const tagsList = [
@@ -22,11 +18,11 @@ const CreatePost = (props) => {
 
     const formData = { category, tags, city, title, message } 
 
+   // TODO this is temporary way to close modal and refresh page
     const refreshPage = () => {
         window.location.reload();
     }
 
-    // TODO this is temporary way to close modal and refresh page
     const handleSubmit = (event) => {
         event.preventDefault();
         
@@ -72,10 +68,10 @@ const CreatePost = (props) => {
                                 </Accordion.Toggle>
                                 <Accordion.Collapse eventKey="1">
                                     <Card.Body>
-                                    {['checkbox'].map((type) => (
+                                    {['checkbox'].map((tags) => (
                                         <Form.Check>
-                                        {tagsList.map((tag, idx) => (
-                                            <Form.Check inline key={idx} label={tag} value={tag}
+                                        {tagsList.map((tags, idx) => (
+                                            <Form.Check inline key={idx} label={tags} value={tags}
                                             onChange={(e) => setTags(e.target.value)}
                                             />
                                         ))}

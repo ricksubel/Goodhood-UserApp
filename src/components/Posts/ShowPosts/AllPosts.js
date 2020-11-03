@@ -4,7 +4,7 @@ import PostContainer from './PostContainer';
 
 const Posts = (props) => {
     function generatePostContainers(posts) {
-        return posts.map(post => {
+        return props.posts.map(post => {
             return <PostContainer key={post._id} post={post} />
         })
     }

@@ -1,25 +1,30 @@
-import React from 'react';
-import { Link } from 'react-router-dom';
-import { Container } from 'react-bootstrap';
-
+import React, { useState } from 'react';
+import EditPost from '../EditPost';
+import { Modal, Container, Col, Row, Card, Button } from 'react-bootstrap';
 import { faEdit } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 const PostContainer = (props) => {
+    const [show, setShow] = useState(false);
+    const handleShow = () => setShow(true);
+    const handleClose = () => setShow(false);
 
     const PostList = props.post.map(post => {
         return (
             <Container className="p-4" key={post._id}>
-                    <div className='post-card'>
-                        {/* <div className='image-wrapper'>
-                            <img src={TODO for userprofile img} alt={title} />
-                        </div> */}
-                        <h5>{post.city}</h5>
-                        <h5>{post.title} posted by:{post.user}</h5>
-                        <p>{post.message}</p>
-                        {/* TODO for user who authored <p>By: {author}</p> */}
-                    </div>
-                <Link to={`/posts/${post._id}/edit`}><FontAwesomeIcon variant="outline-primary" icon={faEdit} size="md"/></Link>
+                <div className='post-card'>
+                    {/* <div className='image-wrapper'>
+                        <img src={TODO for userprofile img} alt={title} />
+                    </div> */}
+                    <p>{post.user}</p>
+                    <h5>{post.city}</h5>
+                    <h5>{post.title}</h5>
+                    <p>{post.message}</p>
+                </div>
+                <FontAwesomeIcon icon={faEdit} size="md" variant="float-right" onClick={handleShow}/>
+                    <Modal show={show} onHide={handleClose}>
+                        <EditPost />
+                    </Modal>
                 <hr/>
             </Container>
         )
@@ -31,3 +36,5 @@ const PostContainer = (props) => {
 }
 
 export default PostContainer;
+
+<FontAwesomeIcon variant="outline-primary" icon={faEdit} size="md"/>
