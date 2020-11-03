@@ -22,7 +22,7 @@ const Routes = (props) => {
         <Switch>
             <Route exact path='/' component={Landing} />
             <Route exact path='/about' component={About} />
-            <Route exact path='/YourHood' component={Posts} />
+            <Route exact path='/neighborhood' component={Posts} />
             <Route exact path='/register' component={Register} />
             <Route exact path='/login' component={Login} />
 

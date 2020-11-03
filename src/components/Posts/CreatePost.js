@@ -5,6 +5,7 @@ import PostModel from '../../models/PostModel';
 
 import cityList from '../Cities/cities';
 import useCities from "../../hooks/useCities";
+import { faTag } from '@fortawesome/free-solid-svg-icons';
 
 
 const CreatePost = (props) => {
@@ -74,8 +75,8 @@ const CreatePost = (props) => {
                                     <Card.Body>
                                     {['checkbox'].map((type) => (
                                         <Form.Check>
-                                        {tagsList.map(tag => (
-                                            <Form.Check inline label={tag}
+                                        {tagsList.map((tag, idx) => (
+                                            <Form.Check inline key={idx} label={tag} value={tag}
                                             onChange={(e) => setTags(e.target.value)}
                                             />
                                         ))}

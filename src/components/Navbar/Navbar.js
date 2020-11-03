@@ -35,7 +35,7 @@ const NavMain = (props) => {
             <Navbar.Collapse id="responsive-navbar-nav">
                 <Nav className="mr-auto">
                     <Nav.Link as={Link} to="/about">About</Nav.Link>
-                    <Nav.Link as={Link} to="/YourHood">Neighborhood Blog</Nav.Link>
+                    <Nav.Link as={Link} to="/neighborhood">Neighborhood Details</Nav.Link>
                 </Nav>
                 <Nav>
                     {user ? (

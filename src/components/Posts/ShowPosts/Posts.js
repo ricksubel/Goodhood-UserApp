@@ -18,7 +18,6 @@ const ShowPosts = (props) => {
     const handleShow = () => setShow(true);
     const handleClose = () => setShow(false);
 
-
     return (
         <Container fluid>
                 <Row>
@@ -54,11 +53,19 @@ const ShowPosts = (props) => {
                         </Container>
                         {/* TODO not rendering!!! */}
                         <Container>
-                            { post ? <PostContainer post={post} /> : <h3>Loading...</h3>}
+                            { post ? (
+                            <>
+                            <PostContainer post={post} /> 
+                            </>
+                            ) : ( 
+                            <>
+                            <h3>Loading...</h3>
+                            </>
+                            )}
                             <hr></hr>
                         </Container>
                     </Col>
-                    
+
                     <Col md={3} className="side-info">
                         <Container>Ornare suspendisse sed nisi lacus sed viverra tellus. Egestas congue quisque egestas diam in arcu. Tincidunt augue interdum velit euismod in. Velit laoreet id donec ultrices tincidunt. Vel elit scelerisque mauris pellentesque pulvinar pellentesque habitant morbi tristique. Imperdiet sed euismod nisi porta lorem mollis aliquam.
                         </Container>
