@@ -30,7 +30,8 @@ const NavMain = (props) => {
     
     return (
         <Navbar inverse collapseOnSelect className="color-nav" expand="lg" variant="light">
-            <Navbar.Brand href="/"><img src={Logo} width="30" height="30" alt="hands connecting" />GoodHood!</Navbar.Brand>
+            <Navbar.Brand href="/"><img src={Logo} width="30" height="30" alt="hands connecting" />GoodHood!
+            </Navbar.Brand>
             <Navbar.Toggle aria-controls="responsive-navbar-nav" />
             <Navbar.Collapse id="responsive-navbar-nav">
                 <Nav className="mr-auto">

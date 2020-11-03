@@ -1,7 +1,5 @@
 import React, { useState } from 'react';
-import PostContainer from './PostContainer';
-
-import usePosts from '../../../hooks/usePosts';
+import PostScroll from './PostScroll';
 
 import { Modal, Container, Col, Row, Card, Button } from 'react-bootstrap';
 import { faPlus } from "@fortawesome/free-solid-svg-icons";
@@ -12,8 +10,6 @@ import Love from './images/loveYN.jpg';
 import './Posts.css';
 
 const ShowPosts = (props) => {
-    const [post] = usePosts(props.match.params.id);
-
     const [show, setShow] = useState(false);
     const handleShow = () => setShow(true);
     const handleClose = () => setShow(false);
@@ -45,24 +41,14 @@ const ShowPosts = (props) => {
                     
                     <Col md={6}>
                         <Container className="posts">
-                            <Button className="btn-circle" size="sm" variant="outline-primary float-right" onClick={handleShow}><FontAwesomeIcon icon={faPlus}/></Button> 
+                            <Button className="btn-circle" size="sm" variant="outline-primary float-right" onClick={handleShow}><FontAwesomeIcon icon={faPlus} size="lg"/></Button> 
                             <Modal show={show} onHide={handleClose}>
                                 <CreatePost />
                             </Modal>
                             <h3>Neighborhood Posts</h3>
                         </Container>
-                        {/* TODO not rendering!!! */}
                         <Container>
-                            { post ? (
-                            <>
-                            <PostContainer post={post} /> 
-                            </>
-                            ) : ( 
-                            <>
-                            <h3>Loading...</h3>
-                            </>
-                            )}
-                            <hr></hr>
+                            <PostScroll />
                         </Container>
                     </Col>
 
@@ -75,6 +61,5 @@ const ShowPosts = (props) => {
         </Container>
     )
 }
-
 
 export default ShowPosts;

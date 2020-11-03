@@ -9,7 +9,6 @@ import { faTag } from '@fortawesome/free-solid-svg-icons';
 
 
 const CreatePost = (props) => {
-    // TODO do I use a hook???
     const tagsList = [
         'Physical Health', 'Mental Health', 'Finances', 'Career Development', 'Education', 'Social Issues', 'Political', 'Neighborhood Development', 'Crime and Safety', 'Substance Abuse', 'Childcare', 'Elderly Care', 'Bartering Services', 'Landscaping and Lawncare', 'Home Repair & Remodeling' 
     ]
@@ -39,7 +38,7 @@ const CreatePost = (props) => {
     return (   
         <Container>
             <h3>Create New Post</h3>
-            {/* {allCities.length > 0 ?  */}
+            {/* TODO {allCities.length > 0 ?  */}
                 <Form onSubmit={handleSubmit}>
                     <Form.Group>
                         <Form.Check inline label="Needing Help"
@@ -111,7 +110,7 @@ const CreatePost = (props) => {
                         <Button type="submit" value="Post" onClick={refreshPage}>Submit Post</Button>
                     </Form.Group>
                 </Form>
-            {/* :null} */}
+            {/* TODO :null} */}
         </Container>
     )
 }

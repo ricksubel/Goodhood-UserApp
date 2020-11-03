@@ -1,6 +1,9 @@
 import React from 'react';
-import { Container, Card } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
+import { Container } from 'react-bootstrap';
+
+import { faEdit } from "@fortawesome/free-solid-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 const PostContainer = (props) => {
 
@@ -16,7 +19,7 @@ const PostContainer = (props) => {
                         <p>{post.message}</p>
                         {/* TODO for user who authored <p>By: {author}</p> */}
                     </div>
-                <Link to={`/posts/${post._id}/edit`} style={{color: 'black'}}>Edit</Link>
+                <Link to={`/posts/${post._id}/edit`}><FontAwesomeIcon variant="outline-primary" icon={faEdit} size="md"/></Link>
                 <hr/>
             </Container>
         )
