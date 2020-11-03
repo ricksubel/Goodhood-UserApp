@@ -47,9 +47,11 @@ const ShowPosts = (props) => {
                             </Modal>
                             <h3>Neighborhood Posts</h3>
                         </Container>
+                        
                         <Container>
                             <PostScroll />
                         </Container>
+                        
                     </Col>
 
                     <Col md={3} className="side-info">

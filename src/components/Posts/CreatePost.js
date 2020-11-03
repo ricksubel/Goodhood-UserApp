@@ -26,12 +26,12 @@ const CreatePost = (props) => {
         window.location.reload();
     }
 
+    // TODO this is temporary way to close modal and refresh page
     const handleSubmit = (event) => {
         event.preventDefault();
         
         PostModel.create(formData).then((data) => {
-            // props.history.push("/for-help");
-            
+            console.log("Post created!");       
         });
     }
 

@@ -9,6 +9,7 @@ import Login from "../pages/Login";
 import Profile from "../pages/UserProfile";
 import CreatePost from '../components/Posts/CreatePost';
 import EditPost from '../components/Posts/EditPost';
+import PostScroll from '../components/Posts/ShowPosts/PostScroll';
 
 import { useRecoilValue } from "recoil";
 import { loggedInState } from "../recoil/selectors";
@@ -31,7 +32,7 @@ const Routes = (props) => {
                 <Route path='/profile:id' component={Profile} />
                 <Route exact path='/create' component={CreatePost} />
                 <Route path='/posts/:id/edit' component={EditPost} />
-                {/* <Route path='/posts' component={PostList} /> */}
+                <Route path='/scroll' component={PostScroll} />
             </Switch>
             )}
             <Route path='*' render={() => <h1>"not found"</h1>} />

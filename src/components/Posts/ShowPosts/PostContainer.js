@@ -15,7 +15,7 @@ const PostContainer = (props) => {
                             <img src={TODO for userprofile img} alt={title} />
                         </div> */}
                         <h5>{post.city}</h5>
-                        <h5>{post.title}</h5>
+                        <h5>{post.title} posted by:{post.user}</h5>
                         <p>{post.message}</p>
                         {/* TODO for user who authored <p>By: {author}</p> */}
                     </div>

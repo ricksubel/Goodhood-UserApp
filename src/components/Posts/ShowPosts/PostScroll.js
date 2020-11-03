@@ -1,21 +1,36 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import PostContainer from './PostContainer';
 import usePosts from '../../../hooks/usePosts';
 
 import InfiniteScroll from "react-infinite-scroll-component";
+import './PostScroll.css';
 
 
 const PostScroll = (props) => {
-    const [post] = usePosts(props.match.params.id);
-    const fetchPosts = setTimeout(post.length, 1500);
+    const [post] = usePosts();
 
+    // fetchPosts (() => {
+    //     setTimeout(() => {
+    //     function to get array of posts;
+    //         }, 1500);
+    //     });
 
     return (
         <InfiniteScroll
-        dataLength={post.length}
-        next={fetchPosts}
+        id="scroll"
+        style={{
+            height: 650,
+            overflow: 'auto',
+            display: 'flex',
+            flexDirection: 'column',
+        }}
+        dataLength={10}
+        // next={fetchPosts}
         hasMore={true}
         loader={<h4>Loading...</h4>}
+        endMessage={
+            <p>You've seen all posts!</p>
+        }
         >
         { post ? (
             <>
@@ -26,7 +41,6 @@ const PostScroll = (props) => {
             <h3>Loading...</h3>
             </>
             )}
-            <hr/>
         </InfiniteScroll>
     );
 }
