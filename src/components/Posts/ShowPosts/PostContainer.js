@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import EditPost from '../EditPost';
-import { Modal, Container, Col, Row, Card, Button } from 'react-bootstrap';
+import { Modal, Container } from 'react-bootstrap';
 import { faEdit } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
@@ -21,7 +21,7 @@ const PostContainer = (props) => {
                     <h5>{post.title}</h5>
                     <p>{post.message}</p>
                 </div>
-                <FontAwesomeIcon icon={faEdit} size="md" variant="float-right" onClick={handleShow}/>
+                <FontAwesomeIcon icon={faEdit} size="1x" variant="float-right" onClick={handleShow}/>
                     <Modal show={show} onHide={handleClose}>
                         <EditPost />
                     </Modal>
@@ -29,8 +29,6 @@ const PostContainer = (props) => {
             </Container>
         )
     })
-
-    console.log(props);
 
     return PostList
 }

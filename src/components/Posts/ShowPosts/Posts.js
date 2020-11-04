@@ -1,4 +1,7 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
+import { useRecoilState } from "recoil";
+import { userState } from '../../../recoil/atoms';
+import UserModel from '../../../models/UserModel';
 import PostScroll from './PostScroll';
 import CreatePost from '../CreatePost';
 import { Modal, Container, Col, Row, Card, Button } from 'react-bootstrap';
@@ -7,10 +10,24 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import Love from './images/loveYN.jpg';
 import './Posts.css';
 
+
 const ShowPosts = (props) => {
     const [show, setShow] = useState(false);
     const handleShow = () => setShow(true);
     const handleClose = () => setShow(false);
+    const [user, setUser] = useRecoilState(userState);
+
+    useEffect(function () {
+        if (localStorage.uid)
+        UserModel.show().then((response) => {
+            setUser(response.data);
+        });
+    }, [setUser]);
+
+    function logout() {
+        setUser(null);
+        localStorage.clear();
+    }
 
     return (
         <Container fluid>
@@ -38,12 +55,20 @@ const ShowPosts = (props) => {
                     </Col>
                     
                     <Col md={6}>
-                        <Container className="posts">
+                            <Container className="posts">
+                            { user ? (
+                            <>
                             <Button className="btn-circle" size="sm" variant="outline-primary float-right" onClick={handleShow}><FontAwesomeIcon icon={faPlus} size="lg"/></Button> 
                             <Modal show={show} onHide={handleClose}>
                                 <CreatePost />
                             </Modal>
-                            <h3>Neighborhood Posts</h3>
+                            </>
+                            ) : (  
+                            <>
+                            <p className="float-right">Sign in to Post!</p>
+                            </>
+                            )}
+                            <h3>Neighborhood Posts </h3>
                         </Container>
                         
                         <Container>

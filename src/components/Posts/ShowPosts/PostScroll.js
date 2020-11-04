@@ -9,9 +9,10 @@ import './PostScroll.css';
 const PostScroll = (props) => {
     const [post] = usePosts();
 
-    // fetchPosts (() => {
+    // TODO add function to fetch data from longer list of posts
+    // fetchMorePosts (() => {
     //     setTimeout(() => {
-    //     function to get array of posts;
+    //     return usePosts()
     //         }, 1500);
     //     });
 
@@ -38,9 +39,9 @@ const PostScroll = (props) => {
             </>
             ) : ( 
             <>
-            <h3>Loading...</h3>
+
             </>
-            )}
+        )}
         </InfiniteScroll>
     );
 }

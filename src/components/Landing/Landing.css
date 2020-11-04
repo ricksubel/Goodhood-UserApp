@@ -1,20 +1,89 @@
+.top-row {
+    background-color: rgba(0, 0, 0, 0.098);
+}
+
+.landing-footer {
+    max-width: 100%;
+    height: auto;
+    opacity: 75%;
+    margin-top: 25px;
+    background-image: url('./Footer/images/handsup2.png');
+}
+
 .fullscreen {
     min-height: 100vh;
 }
 
-.dot {
+.dot1 {
+    color: white;
+    font-weight: bold;
+    background-image: 
+    linear-gradient(
+    rgba(94, 224, 244, 0.5),
+    rgba(57, 149, 241, 0.3)
+    ), 
+    url('./Footer/images/HelpMe.jpg');
+    background-size: cover;
+    margin: 50px auto 0;
     text-align: center;
     display: flex;
-    /* display: inline-block; */
     flex-direction: column;
     justify-content: center;
-    height: 100px;
-    width: 100px;
-    background-color: rgba(0, 115, 255, 0.742);
+    height: 200px;
+    width: 200px;
+    background-color: rgba(242, 124, 232, 0.625);
     border-radius: 50%;
+    border: 0.2px solid rgba(79, 150, 186, 0.317);
+    box-shadow: 4px 5px 30px rgba(9, 7, 0, 0.577);
+}
+
+.dot2 {
+    color: white;
+    font-weight: bold;
+    background-image: 
+    linear-gradient(
+    rgba(94, 224, 244, 0.5),
+    rgba(57, 149, 241, 0.3)
+    ), 
+    url('./Footer/images/ShakingHands.jpg');
+    background-size: cover;
+    margin: 50px auto 0;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 200px;
+    width: 200px;
+    background-color: rgba(242, 124, 232, 0.625);
+    border-radius: 50%;
+    border: 0.2px solid rgba(79, 150, 186, 0.317);
+    box-shadow: 4px 5px 30px rgba(9, 7, 0, 0.577);
+}
+
+.dot3 {
+    color: white;
+    font-weight: bold;
+    background-image: 
+    linear-gradient(
+    rgba(32, 115, 128, 0.577),
+    rgba(57, 149, 241, 0.3)
+    ), 
+    url('./Footer/images/neighborhood.jpg');
+    background-size: cover;
+    margin: 50px auto 0;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 200px;
+    width: 200px;
+    background-color: rgba(242, 124, 232, 0.625);
+    border-radius: 50%;
+    border: 0.2px solid rgba(79, 150, 186, 0.317);
+    box-shadow: -5px 2px 30px rgba(9, 7, 0, 0.577);
 }
 
 .col-4 {
-    margin: auto;
-    vertical-align: middle;
+
+
 }

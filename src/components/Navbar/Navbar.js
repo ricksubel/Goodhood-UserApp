@@ -29,8 +29,8 @@ const NavMain = (props) => {
 
     
     return (
-        <Navbar inverse collapseOnSelect className="color-nav" expand="lg" variant="light">
-            <Navbar.Brand href="/"><img src={Logo} width="30" height="30" alt="hands connecting" />GoodHood!
+        <Navbar collapseOnSelect className="color-nav" expand="lg" variant="light">
+            <Navbar.Brand href="/"><img src={Logo} width="30" height="30" className="d-inline-block align-top mr-2" />GoodHood!
             </Navbar.Brand>
             <Navbar.Toggle aria-controls="responsive-navbar-nav" />
             <Navbar.Collapse id="responsive-navbar-nav">
@@ -42,7 +42,7 @@ const NavMain = (props) => {
                     {user ? (
                     <>
                         <Nav.Link as={Link} to={"/profile:id"}>My Profile</Nav.Link>
-                        <Button size="md" onClick={logout} as={Link} to={"/"}>Log Out</Button>
+                        <Button size="sm" onClick={logout} as={Link} to={"/"} value="Log Out">Log Out</Button>
                     </>
                     ) : (
                     <>

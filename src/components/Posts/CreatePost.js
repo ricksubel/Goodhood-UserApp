@@ -11,14 +11,14 @@ const CreatePost = (props) => {
     // const [cityList] = useCities();
 
     const [category, setCategory] = useState('') 
-    const [tags, setTags] = useState('')
+    const [tags, setTags] = useState(false)
     const [city, setCity] = useState('') 
     const [title, setTitle] = useState('') 
     const [message, setMessage] = useState('') 
 
     const formData = { category, tags, city, title, message } 
 
-   // TODO this is temporary way to close modal and refresh page
+   // TODO FIX THIS!!! this is temporary way to close modal and refresh page
     const refreshPage = () => {
         window.location.reload();
     }
@@ -27,7 +27,8 @@ const CreatePost = (props) => {
         event.preventDefault();
         
         PostModel.create(formData).then((data) => {
-            console.log("Post created!");       
+            console.log("Post created!"); 
+            console.log(formData);
         });
     }
 
@@ -72,8 +73,7 @@ const CreatePost = (props) => {
                                         <Form.Check>
                                         {tagsList.map((tags, idx) => (
                                             <Form.Check inline key={idx} label={tags} value={tags}
-                                            onChange={(e) => setTags(e.target.value)}
-                                            />
+                                            onChange={(e) => setTags(e.target.value)} />
                                         ))}
                                         </Form.Check>
                                     ))}
