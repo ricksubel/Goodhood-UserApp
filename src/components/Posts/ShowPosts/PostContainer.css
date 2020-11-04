@@ -6,12 +6,12 @@
 }
 
 .faEdit {
-    color: rgb(25, 225, 188);
+    color: rgba(25, 225, 188, 0.687);
     
 }
 
 .faHeart {
-    color: rgba(222, 80, 94, 0.427);
+    color: rgba(242, 76, 15, 0.593);
     margin-left: 23px;
 }
 
