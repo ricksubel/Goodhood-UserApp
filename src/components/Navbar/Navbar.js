@@ -42,7 +42,7 @@ const NavMain = (props) => {
                     {user ? (
                     <>
                         <Nav.Link as={Link} to={"/profile:id"}>My Profile</Nav.Link>
-                        <Button size="sm" onClick={logout} as={Link} to={"/"} value="Log Out">Log Out</Button>
+                        <Button variant="outline-secondary" size="xs" onClick={logout} as={Link} to={"/"} value="Log Out">Log Out</Button>
                     </>
                     ) : (
                     <>

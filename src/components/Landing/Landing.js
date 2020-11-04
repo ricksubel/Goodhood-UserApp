@@ -15,17 +15,17 @@ function Landing() {
                 <Header />
             </Row>
             <Row className="mt-5" fluid="md">
-                <Col >
+                <Col xs={6} md={4}>
                     <span className="dot1">
                         <h3 className="my-auto">Here for help?</h3>
                     </span>
                 </Col>
-                <Col >
+                <Col xs={6} md={4}>
                     <span className="dot2">
                         <h3 className="my-auto">Here to help?</h3>
                     </span>
                 </Col>
-                <Col >
+                <Col xs={6} md={4}>
                     <span className="dot3">
                         <h3 className="my-auto">Got a Good Idea?</h3>
                     </span>

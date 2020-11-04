@@ -20,7 +20,7 @@ const PostScroll = (props) => {
         <InfiniteScroll
         id="scroll"
         style={{
-            height: 650,
+            height: 750,
             overflow: 'auto',
             display: 'flex',
             flexDirection: 'column',
@@ -28,10 +28,10 @@ const PostScroll = (props) => {
         dataLength={10}
         // next={fetchPosts}
         hasMore={true}
-        loader={<h4>Loading...</h4>}
-        endMessage={
-            <p>You've seen all posts!</p>
-        }
+        // loader={<h4>Loading...</h4>}
+        // endMessage={
+        //     <p>You've seen all posts!</p>
+        // }
         >
         { post ? (
             <>

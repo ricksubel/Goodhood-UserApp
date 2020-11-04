@@ -4,10 +4,12 @@ import { userState } from '../../../recoil/atoms';
 import UserModel from '../../../models/UserModel';
 import PostScroll from './PostScroll';
 import CreatePost from '../CreatePost';
-import { Modal, Container, Col, Row, Card, Button } from 'react-bootstrap';
+import { Modal, Container, Col, Row, Card, Button, Jumbotron, Image } from 'react-bootstrap';
+
 import { faPlus } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import Love from './images/loveYN.jpg';
+import Neighborhood2 from './images/neighborhood2.jpg';
 import './Posts.css';
 
 
@@ -33,7 +35,7 @@ const ShowPosts = (props) => {
         <Container fluid>
                 <Row>
                     <Col md={3} className="side-info">
-                        <Container>
+                        <Container className="left-side">
                             <Card>
                                 <Card.Img variant="top" src={Love} />
                                 <Card.Body>
@@ -42,7 +44,7 @@ const ShowPosts = (props) => {
                                     Some quick example text to build on the card title and make up the bulk of
                                     the card's content.
                                     </Card.Text>
-                                    <Button variant="primary" size="sm">Go somewhere</Button>
+                                    <Button variant="outline-secondary" size="sm">Go somewhere</Button>
                                 </Card.Body>
                             </Card>
                             <hr></hr>
@@ -55,24 +57,47 @@ const ShowPosts = (props) => {
                     </Col>
                     
                     <Col md={6}>
-                            <Container className="posts">
+                        <Container className="posts-header">
                             { user ? (
                             <>
                             <Button className="btn-circle" size="sm" variant="outline-primary float-right" onClick={handleShow}><FontAwesomeIcon icon={faPlus} size="lg"/></Button> 
                             <Modal show={show} onHide={handleClose}>
                                 <CreatePost />
                             </Modal>
+                            <h3>Neighborhood Posts </h3>
                             </>
                             ) : (  
                             <>
-                            <p className="float-right">Sign in to Post!</p>
+                            <Jumbotron className="jumbo" variant="danger">
+                                <h1>Welcome to the Neighborhood!</h1>
+                                <p>
+                                    In order to access posts and information in your area, you must register a new account, or sign in if you are a returning neighbor!
+                                </p>
+                                <p>
+                                    <Button size="sm" variant="info">Register Account</Button>
+                                </p>
+                                <p>
+                                    <Button size="sm" variant="outline-info">Sign in</Button>
+                                </p>
+                            </Jumbotron>
                             </>
                             )}
-                            <h3>Neighborhood Posts </h3>
                         </Container>
                         
                         <Container>
+                        { user ? (
+                            <>
                             <PostScroll />
+                            </>
+                            ) : (  
+                            <>
+                            <Container className="blurred">
+                                <span className="blur">
+                                    <h1 className="message">Making the world better one neighborhood at a time!</h1>
+                                </span>
+                            </Container>   
+                            </>
+                            )}
                         </Container>
                         
                     </Col>
