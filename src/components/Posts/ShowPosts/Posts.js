@@ -8,6 +8,7 @@ import { Modal, Container, Col, Row, Card, Button, Jumbotron, Image } from 'reac
 
 import { faPlus } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+
 import Love from './images/loveYN.jpg';
 import Neighborhood2 from './images/neighborhood2.jpg';
 import './Posts.css';
@@ -32,7 +33,7 @@ const ShowPosts = (props) => {
     }
 
     return (
-        <Container fluid>
+        <Container>
                 <Row>
                     <Col md={3} className="side-info">
                         <Container className="left-side">
@@ -60,8 +61,16 @@ const ShowPosts = (props) => {
                         <Container className="posts-header">
                             { user ? (
                             <>
-                            <Button className="btn-circle" size="sm" variant="outline-primary float-right" onClick={handleShow}><FontAwesomeIcon icon={faPlus} size="lg"/></Button> 
-                            <Modal show={show} onHide={handleClose}>
+                            <Button 
+                                className="btn-circle" 
+                                size="sm" 
+                                variant="outline-info float-right" 
+                                onClick={handleShow}><FontAwesomeIcon 
+                                    icon={faPlus} 
+                                    size="lg"/></Button> 
+                            <Modal 
+                                show={show} 
+                                onHide={handleClose}>
                                 <CreatePost />
                             </Modal>
                             <h3>Neighborhood Posts </h3>

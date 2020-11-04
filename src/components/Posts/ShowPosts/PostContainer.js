@@ -16,12 +16,12 @@ const PostContainer = (props) => {
         return (
             <Container key={post._id}>
                 <Row className='post-card'>
-                    <Col fluid xs="2">
+                    <Col xs="2">
                         <Row>
                             <Image id="post-img" src={Default} roundedCircle />
                         </Row>
-                        <Row fluid className="icons">
-                            <FontAwesomeIcon fluid
+                        <Row className="icons">
+                            <FontAwesomeIcon
                                 className="faEdit" 
                                 icon={faEdit} 
                                 size="lg" 
@@ -31,7 +31,7 @@ const PostContainer = (props) => {
                                 onHide={handleClose}>
                                 <EditPost />
                             </Modal>
-                            <FontAwesomeIcon fluid
+                            <FontAwesomeIcon
                                 className="faHeart" 
                                 icon={faHeart} 
                                 size="lg"  

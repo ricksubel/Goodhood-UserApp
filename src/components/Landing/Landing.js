@@ -10,11 +10,11 @@ import './Landing.css';
 function Landing() {
 
     return (
-        <Container fluid className="landing">
+        <Container className="landing">
             <Row className="top-row text-center">
                 <Header />
             </Row>
-            <Row className="mt-5" fluid="md">
+            <Row className="mt-5">
                 <Col xs={6} md={4}>
                     <span className="dot1">
                         <h3 className="my-auto">Here for help?</h3>
@@ -32,7 +32,7 @@ function Landing() {
                 </Col>
             </Row>
             <Row className="landing-footer">
-                <Image fluid src={HandsUp2} responsive></Image>
+                <Image src={HandsUp2} responsive></Image>
             </Row>
             </Container>
 

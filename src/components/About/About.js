@@ -7,7 +7,7 @@ import './About.css';
 const About = () => {
 
     return (
-        <Container fluid>
+        <Container>
             <Row>
                 <AboutCarousel />
             </Row>

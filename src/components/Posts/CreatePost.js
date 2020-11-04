@@ -3,6 +3,7 @@ import { Container, Form, Button, Accordion, Card } from 'react-bootstrap';
 
 import PostModel from '../../models/PostModel';
 
+import './CreatePost.css';
 
 const CreatePost = (props) => {
     const tagsList = [
@@ -11,51 +12,52 @@ const CreatePost = (props) => {
     // const [cityList] = useCities();
 
     const [category, setCategory] = useState('') 
-    const [tags, setTags] = useState(false)
+    const [tags, setTags] = useState('')
     const [city, setCity] = useState('') 
     const [title, setTitle] = useState('') 
     const [message, setMessage] = useState('') 
 
-    const formData = { category, tags, city, title, message } 
-
-   // TODO FIX THIS!!! this is temporary way to close modal and refresh page
     const refreshPage = () => {
         window.location.reload();
     }
 
+
     const handleSubmit = (event) => {
         event.preventDefault();
-        
-        PostModel.create(formData).then((data) => {
+        console.log(" Post Submitted!", { category, tags, city, title, message })
+        PostModel.create({ category, tags, city, title, message }).then((data) => {
             console.log("Post created!"); 
-            console.log(formData);
+            refreshPage();
         });
     }
 
     return (   
-        <Container>
-            <h3>Create New Post</h3>
+        <Container className="post-modal">
+            <h3>Create New Post!</h3>
             {/* TODO {allCities.length > 0 ?  */}
                 <Form onSubmit={handleSubmit}>
                     <Form.Group>
-                        <Form.Check inline label="Needing Help"
+                        <Form.Check 
+                            inline label="Needing Help"
                             type="radio" 
-                            name="typeOptions" 
-                            id="typeNeed" 
+                            name="tagOption" 
+                            id="tag-Need" 
                             value="Needing Help"
                             onChange={(e) => setCategory(e.target.value)}
                             />
-                        <Form.Check inline label="Offering Help"
+                        <Form.Check 
+                            inline label="Offering Help"
                             type="radio" 
-                            name="typeOptions" 
-                            id="typeOffering" 
+                            name="tagOption" 
+                            id="tag-Offer" 
                             value="Offering Help" 
                             onChange={(e) => setCategory(e.target.value)}
                             />
-                        <Form.Check inline label="Neighborhood Suggestions" 
+                        <Form.Check 
+                            inline label="Neighborhood Suggestions" 
                             type="radio" 
-                            name="typeOptions" 
-                            id="typeGeneral" 
+                            name="tagOption" 
+                            id="tag-Suggest" 
                             value="Neighborhood Suggestions" 
                             onChange={(e) => setCategory(e.target.value)}
                             />
@@ -64,21 +66,33 @@ const CreatePost = (props) => {
                     <Form.Group>
                         <Accordion defaultActiveKey="0">
                             <Card>
-                                <Accordion.Toggle as={Button} variant="outline-primary" size="sm" eventKey="1">
+                                <Accordion.Toggle 
+                                    as={Button} 
+                                    variant="outline-info" 
+                                    size="sm" 
+                                    eventKey="1">
                                     Select Categories:
                                 </Accordion.Toggle>
+
+
                                 <Accordion.Collapse eventKey="1">
                                     <Card.Body>
                                     {['checkbox'].map((tags) => (
                                         <Form.Check>
                                         {tagsList.map((tags, idx) => (
-                                            <Form.Check inline key={idx} label={tags} value={tags}
-                                            onChange={(e) => setTags(e.target.value)} />
-                                        ))}
+                                            <Form.Check 
+                                                inline key={idx} 
+                                                label={tags} 
+                                                value={tags}
+                                                onChange={(e) => setTags(oldTags => [...oldTags, e.target.value])} />
+                                            ))}
                                         </Form.Check>
                                     ))}
                                     </Card.Body>
                                 </Accordion.Collapse>
+
+
+
                             </Card>
                         </Accordion>
                     </Form.Group>
@@ -103,7 +117,12 @@ const CreatePost = (props) => {
                         <Form.Control as="textarea" rows={3} onChange={(e)=> setMessage(e.target.value)}/>
                     </Form.Group>
                     <Form.Group>
-                        <Button type="submit" value="Post" onClick={refreshPage}>Submit Post</Button>
+                        <Button 
+                            variant ="info"
+                            type="submit" 
+                            value="Post" 
+                            // onClick={refreshPage}
+                            >Submit Post</Button>
                     </Form.Group>
                 </Form>
             {/* TODO :null} */}

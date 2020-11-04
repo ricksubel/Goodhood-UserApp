@@ -3,6 +3,8 @@ import { Container, Form, Button, Accordion, Card } from 'react-bootstrap';
 
 import PostModel from '../../models/PostModel';
 
+import './CreatePost.css';
+
 
 const EditPost = (props) => {
     const tagsList = [
@@ -16,18 +18,16 @@ const EditPost = (props) => {
     const [title, setTitle] = useState('') 
     const [message, setMessage] = useState('') 
 
-    const formData = { category, tags, city, title, message } 
-
-   // TODO this is temporary way to close modal and refresh page
     const refreshPage = () => {
         window.location.reload();
     }
 
     const handleSubmit = (event) => {
         event.preventDefault();
-    
-        PostModel.edit(formData).then((data) => {
-            console.log("Post created!");       
+        console.log(" Post Update!", { category, tags, city, title, message })
+        PostModel.edit({ category, tags, city, title, message }).then((data) => {
+            console.log("Post updated!"); 
+            refreshPage();      
         });
     }
 
@@ -38,24 +38,27 @@ const EditPost = (props) => {
             {/* TODO {allCities.length > 0 ?  */}
                 <Form onSubmit={handleSubmit}>
                     <Form.Group>
-                        <Form.Check inline label="Needing Help"
+                        <Form.Check 
+                            inline label="Needing Help"
                             type="radio" 
-                            name="typeOptions" 
-                            id="typeNeed" 
+                            name="tagOption" 
+                            id="tag-Need" 
                             value="Needing Help"
                             onChange={(e) => setCategory(e.target.value)}
                             />
-                        <Form.Check inline label="Offering Help"
+                        <Form.Check 
+                            inline label="Offering Help"
                             type="radio" 
-                            name="typeOptions" 
-                            id="typeOffering" 
+                            name="tagOption" 
+                            id="tag-Offer" 
                             value="Offering Help" 
                             onChange={(e) => setCategory(e.target.value)}
                             />
-                        <Form.Check inline label="Neighborhood Suggestions" 
+                        <Form.Check 
+                            inline label="Neighborhood Suggestions" 
                             type="radio" 
-                            name="typeOptions" 
-                            id="typeGeneral" 
+                            name="tagOption" 
+                            id="tag-Suggest" 
                             value="Neighborhood Suggestions" 
                             onChange={(e) => setCategory(e.target.value)}
                             />
@@ -64,22 +67,31 @@ const EditPost = (props) => {
                     <Form.Group>
                         <Accordion defaultActiveKey="0">
                             <Card>
-                                <Accordion.Toggle as={Button} variant="outline-primary" size="sm" eventKey="1">
+                                <Accordion.Toggle 
+                                    as={Button}                           variant="outline-primary" 
+                                    size="sm" eventKey="1">
                                     Select Categories:
                                 </Accordion.Toggle>
+
+                        
                                 <Accordion.Collapse eventKey="1">
                                     <Card.Body>
                                     {['checkbox'].map((type) => (
                                         <Form.Check>
                                         {tagsList.map((tag, idx) => (
-                                            <Form.Check inline key={idx} label={tag} value={tag}
-                                            onChange={(e) => setTags(e.target.value)}
+                                            <Form.Check 
+                                                inline key={idx} 
+                                                label={tag} 
+                                                value={tag}
+                                                onChange={(e) => setTags(oldTags => [...oldTags, e.target.value])}
                                             />
                                         ))}
                                         </Form.Check>
                                     ))}
                                     </Card.Body>
                                 </Accordion.Collapse>
+
+
                             </Card>
                         </Accordion>
                     </Form.Group>
