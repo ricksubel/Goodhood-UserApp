@@ -2,24 +2,12 @@ const URL = 'http://localhost:3001/api/v1/posts'
 
 class PostModel {
     static all = () => {
-        return fetch(URL, {
-            headers: {
-                "Content-Type": "application/json",
-                "authorization": `Bearer ${localStorage.uid}`,
-        },}
-        ).then(response => response.json());
+        return fetch(URL).then(response => response.json());
     }
 
-    
     static show = (postId) => {
-        return fetch(`${URL}/${postId}`, {
-            headers: {
-                "Content-Type": "application/json",
-                "authorization": `Bearer ${localStorage.uid}`,
-            },}
-        ).then(response => response.json());
+        return fetch(`${URL}/${postId}`).then(response => response.json());
     }
-
 
     static create = (postData) => {
         return fetch(URL, {

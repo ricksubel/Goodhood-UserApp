@@ -11,9 +11,9 @@ function usePosts(postId) {
             setPosts(data.post);
         });
         } else {
-        PostModel.all().then((data) => {
-            setPosts(data.posts);
-        });
+            PostModel.all().then((data) => {
+                setPosts(data.posts);
+            });
         }
     }
 

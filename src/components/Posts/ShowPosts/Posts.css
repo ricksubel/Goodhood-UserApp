@@ -1,74 +1,36 @@
-.posts-header {
-    padding-top: 30px;
-    padding-bottom: 30px;
-}
-
-.post {
-    margin-top: 10px;
-}
-
-.btn-circle { 
-    width: 30px; 
-    height: 30px; 
-    padding: 6px 0px; 
-    border-radius: 15px; 
-    font-size: 8px; 
-    text-align: center; 
-}
-
-.side-info {
-    background-image: 
-    linear-gradient(
-    rgba(181, 210, 215, 0.5),
-    rgba(59, 166, 199, 0.495) 100%
-    );
-    padding-top: 30px;
-    padding-bottom: 30px;
-    height: 100vh;
-}
-
-.left-side {
+.games-container {
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
+    flex-wrap: wrap;
 }
-
-.blurred {
-    border-radius: 5px;
-    display: flex;
-    height: 500px;
-    flex-direction: column;
-    background-image: url('./images/neighborhood2.jpg');
-    background-size: cover;
-    opacity: 55%;
+.game-card {
+    width: 200px;
+    height: 250px;
+    margin: 20px;
     position: relative;
-    z-index: -2;
-}
-
-.blur {
-    background:
-    linear-gradient(
-    rgba(57, 149, 241, 0.3),
-    rgba(94, 224, 244, 0.5)
-    );
-    backdrop-filter: blur(2.5px);
-    height: 100vh;
-    width: 100%;
-    text-align: center;
+    color: white;
+    background-color: rgba(0, 0, 0, 0.3);
     display: flex;
     flex-direction: column;
-    justify-content: center;
-    position: relative;
-    z-index: -1;
+    justify-content: space-between;
+    align-items: center;
+    transition: 0.1s linear;
 }
 
-.message {
-    color:rgb(255, 255, 255);
-    font-weight: bold;
-    font-size: 45px;
+.game-card:hover {
+    transform: scale(1.1);
+}
+
+.image-wrapper {
+    width: 200px;
+    height: 250px;
+    margin: 0 auto;
     position: absolute;
-    z-index: 3;
+    z-index: -1;
+    overflow: hidden;
 }
-
-.jumbo {
-    color: rgba(233, 112, 60, 0.858);
+.image-wrapper img {
+    width: 200px;
+    height: 250px;
+    object-fit: cover;
 }

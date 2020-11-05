@@ -43,6 +43,7 @@ const CreatePost = (props) => {
                             name="tagOption" 
                             id="tag-Need" 
                             value="Needing Help"
+                            inputRef={(ref) => {this.input = ref}}
                             onChange={(e) => setCategory(e.target.value)}
                             />
                         <Form.Check 
@@ -51,6 +52,7 @@ const CreatePost = (props) => {
                             name="tagOption" 
                             id="tag-Offer" 
                             value="Offering Help" 
+                            inputRef={(ref) => {this.input = ref}}
                             onChange={(e) => setCategory(e.target.value)}
                             />
                         <Form.Check 
@@ -85,7 +87,7 @@ const CreatePost = (props) => {
                                                 label={tags} 
                                                 value={tags}
                                                 onChange={(e) => setTags(oldTags => [...oldTags, e.target.value])} />
-                                            ))}
+                                        ))}
                                         </Form.Check>
                                     ))}
                                     </Card.Body>
@@ -105,23 +107,32 @@ const CreatePost = (props) => {
                             {/* return <option value={city.id} key={city.id}>{city.city}, {city.state}</option>    
                             }): null} */}
                         {/* </Form.Control> */}
-                        <Form.Control type="text" onChange={(e)=> setCity(e.target.value)}/>
+                        <Form.Control 
+                            type="text" 
+                            name="cityName"
+                            onChange={(e)=> setCity(e.target.value)}/>
                     </Form.Group>
 
                     <Form.Group>
-                            <Form.Label>Title:</Form.Label>
-                            <Form.Control type="text" onChange={(e)=> setTitle(e.target.value)}/>
+                        <Form.Label>Title:</Form.Label>
+                        <Form.Control 
+                            type="text"
+                            name="postTitle" 
+                            onChange={(e)=> setTitle(e.target.value)}/>
                     </Form.Group>
                     <Form.Group> 
                         <Form.Label>Message: </Form.Label>
-                        <Form.Control as="textarea" rows={3} onChange={(e)=> setMessage(e.target.value)}/>
+                        <Form.Control 
+                            as="textarea" 
+                            rows={3} 
+                            name="postMessage"
+                            onChange={(e)=> setMessage(e.target.value)}/>
                     </Form.Group>
                     <Form.Group>
                         <Button 
-                            variant ="info"
+                            variant="info"
                             type="submit" 
                             value="Post" 
-                            // onClick={refreshPage}
                             >Submit Post</Button>
                     </Form.Group>
                 </Form>

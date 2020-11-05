@@ -1,11 +1,13 @@
 import React, { useState } from "react";
-import { Container, Form, Button } from 'react-bootstrap';
+import { Container, Card, Form, Button } from 'react-bootstrap';
 
 import AuthModel from "../models/AuthModel";
 import UserModel from "../models/UserModel";
 
 import { useSetRecoilState } from "recoil";
 import { userState } from "../recoil/atoms.js";
+
+import './Login.css';
 
 
 function Login(props) {
@@ -29,7 +31,8 @@ function Login(props) {
 
 
 return (
-    <Container>
+    <Container fluid className="wrapper">
+        <Container className="loginBox">
             <h4>Login</h4>
             <Form onSubmit={handleSubmit}>
                 <Form.Group>
@@ -54,6 +57,7 @@ return (
                     <Button type='submit' value='Login'>Login</Button>
                 </Form.Group>
             </Form>
+        </Container>
     </Container>
     );
 }

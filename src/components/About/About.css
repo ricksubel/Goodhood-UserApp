@@ -1,3 +1,11 @@
 .about-container {
     margin-top: 100px;
 }
+
+.aboutUs {
+    background-color: whitesmoke;
+}
+
+.content {
+    padding: 20px
+}

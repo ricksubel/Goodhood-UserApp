@@ -10,7 +10,7 @@ import './Landing.css';
 function Landing() {
 
     return (
-        <Container className="landing">
+        <Container fluid className="landing">
             <Row className="top-row text-center">
                 <Header />
             </Row>
