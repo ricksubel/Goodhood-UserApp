@@ -1,7 +1,6 @@
 import React from 'react';
+import PostModel from '../../models/PostModel'; 
 import { Container, Form, Button, Accordion, Card } from 'react-bootstrap';
-
-import PostModel from '../../models/PostModel';
 
 import './CreatePost.css';
 
@@ -22,6 +21,7 @@ class EditPost extends React.Component {
         city: '',
         title: '',
         message: '',
+        formTitle: '',
     }
     
 
@@ -34,7 +34,7 @@ class EditPost extends React.Component {
             .then(json => {
                 this.setState({
                     ...json.post,
-                    postTitle: json.post.title
+                    formTitle: json.post.title
                 })
             })
     }

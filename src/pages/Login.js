@@ -1,5 +1,6 @@
 import React, { useState } from "react";
-import { Container, Card, Form, Button } from 'react-bootstrap';
+import Link from 'react-router-dom';
+import { Container, Form, Button } from 'react-bootstrap';
 
 import AuthModel from "../models/AuthModel";
 import UserModel from "../models/UserModel";
@@ -54,7 +55,11 @@ return (
                     />
                 </Form.Group>
                 <Form.Group>
-                    <Button type='submit' value='Login'>Login</Button>
+                    <Button 
+                        className="loginButton"
+                        variant='info'
+                        type='submit' 
+                        value='Login'>Login</Button>
                 </Form.Group>
             </Form>
         </Container>

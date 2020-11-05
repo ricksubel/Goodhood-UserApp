@@ -3,6 +3,8 @@ import { useRecoilState } from 'recoil';
 import { userState } from '../recoil/atoms';
 import { Card, Image, Row } from 'react-bootstrap';
 
+import UserModel from '../models/UserModel';
+
 import Default from '../components/Posts/ShowPosts/images/default.jpg'
 import '../components/Posts/ShowPosts/PostContainer.css'
 
@@ -13,7 +15,6 @@ const Profile = (props) => {
         <Card bg="secondary" text="white" style={{ width: '36rem' }}>
             <Card.Header d-inline>
                 <Card.Text>My Profile</Card.Text>
-                <Card.Text variant="float-right">Edit</Card.Text>
             </Card.Header>
             <Card.Body>
                 <Card.Title>Welcome back, {user.username}!</Card.Title>
@@ -23,12 +24,9 @@ const Profile = (props) => {
                     <h6>Member since: {user.date}</h6>
                     <hr/>
                     <p>My posts:</p>
-                    <p>Title: a;sdlfjk ;alsdjk ;alsdfjk</p>
-                    <p>Title: a;sdlfjk ;alsdjk ;alsdfjk</p>
-                    <p>Title: a;sdlfjk ;alsdjk ;alsdfjk</p>
-                    <p>Title: a;sdlfjk ;alsdjk ;alsdfjk</p>
-                    <p>Title: a;sdlfjk ;alsdjk ;alsdfjk</p>
-                    <p>Title: a;sdlfjk ;alsdjk ;alsdfjk</p>
+                    <p>Title: Post Info Here</p>
+                    <p>Title: Post Info Here</p>
+                    <p>Title: Post Info Here</p>
                 </Card.Text>
             </Card.Body>
         </Card>

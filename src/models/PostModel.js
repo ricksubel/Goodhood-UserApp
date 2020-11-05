@@ -22,7 +22,7 @@ class PostModel {
     }
 
 
-    static edit = (postId, postData) => {
+    static update = (postId, postData) => {
         return fetch(`${URL}/${postId}`, {
             method: "PUT",
             headers: {

@@ -3,7 +3,10 @@ import { Link } from 'react-router-dom';
 import { useRecoilState } from "recoil";
 import { userState } from '../../../recoil/atoms';
 import UserModel from '../../../models/UserModel';
-import PostShow from '../PostShow';
+import PostScroll from '../ShowPosts/PostScroll';
+import usePosts from '../../../hooks/usePosts';
+import PostContainer from '../ShowPosts/PostContainer';
+
 import CreatePost from '../CreatePost';
 import Footer from '../../Landing/Footer/Footer';
 import { Modal, Container, Col, Row, Card, Button, Jumbotron, Image } from 'react-bootstrap';
@@ -33,6 +36,11 @@ const ShowPosts = (props) => {
         localStorage.clear();
     }
 
+    // const PostShow = (props) => {
+    //     const [post] = usePosts(props.match.params.id);
+    //     return post ? <PostContainer post={post} /> : <h3>Loading...</h3>;
+    // }
+
     return (
         <Container fluid>
             <Row>
@@ -41,10 +49,9 @@ const ShowPosts = (props) => {
                         <Card>
                             <Card.Img variant="top" src={Love} />
                             <Card.Body>
-                                <Card.Title>Card Title</Card.Title>
+                                <Card.Title>Interesting Article</Card.Title>
                                 <Card.Text>
-                                Some quick example text to build on the card title and make up the bulk of
-                                the card's content.
+                                Consectetur a erat nam at lectus urna duis convallis convallis. Quam pellentesque nec nam aliquam. Id eu nisl nunc mi ipsum. Turpis egestas maecenas pharetra convallis posuere morbi. Lobortis scelerisque fermentum dui faucibus in ornare quam viverra. 
                                 </Card.Text>
                                 <Button variant="outline-secondary" size="sm">Go somewhere</Button>
                             </Card.Body>
@@ -52,6 +59,7 @@ const ShowPosts = (props) => {
                         <hr></hr>
                         <Card>
                             <Card.Body>
+                            <Card.Title>Some Other Data</Card.Title>
                                 Ornare suspendisse sed nisi lacus sed viverra tellus. Egestas congue quisque egestas diam in arcu. Tincidunt augue interdum velit euismod in. Velit laoreet id donec ultrices tincidunt. Vel elit scelerisque mauris pellentesque pulvinar pellentesque habitant morbi tristique. Imperdiet sed euismod nisi porta lorem mollis aliquam.
                             </Card.Body>
                         </Card>
@@ -107,7 +115,7 @@ const ShowPosts = (props) => {
                     <Container>
                     { user ? (
                         <>
-                        <PostShow />
+                        <PostScroll/>
                         </>
                         ) : (  
                         <>
@@ -124,6 +132,7 @@ const ShowPosts = (props) => {
 
                 <Col md={3} className="side-info">
                     <Container fluid className="right-side">
+                    <Card.Title>Volunteering Events:</Card.Title>
                         Ornare suspendisse sed nisi lacus sed viverra tellus. Egestas congue quisque egestas diam in arcu. Tincidunt augue interdum velit euismod in. Velit laoreet id donec ultrices tincidunt. Vel elit scelerisque mauris pellentesque pulvinar pellentesque habitant morbi tristique. Imperdiet sed euismod nisi porta lorem mollis aliquam.
                     </Container>
                 </Col>

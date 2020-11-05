@@ -7,7 +7,6 @@ function PostList(props) {
 
     return (
         <div>
-            <h1>All Posts</h1>
             {posts.length ? <Posts data={posts} /> : <h1>Loading...</h1>}
         </div>
     );
