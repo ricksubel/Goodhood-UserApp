@@ -1,15 +1,14 @@
 import React from 'react'
+import { Container, Row, Button, Form } from 'react-bootstrap';
 
-import Hands from './images/crowd-hands.jpeg'
 import './Footer.css';
 
-
-
 function Footer() {
+
     return (
-            <div className="footer">
-                <img className="footer-image" src={Hands} alt="hands reaching up"/>
-            </div>
+        <Container fluid className="footer">
+            <p className="copyright">&copy;2020 Goodhood</p>
+        </Container>
     );
 }
 

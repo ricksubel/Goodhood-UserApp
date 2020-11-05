@@ -1,6 +1,10 @@
-header {
-    /* TODO where to put background image??? */
-	/* background-image: url('hand-logo.png'); */
-    background-size: contain;
-    background-repeat: no-repeat;
+.header {
+    background: linear-gradient(180deg, rgba(162, 245, 189, 0.721), rgba(232, 250, 250, 0.769) 100%);
+    padding: 30px;
 }
+
+.welcome {
+    font-weight: bold;
+    color: rgb(28, 47, 55);
+}
+

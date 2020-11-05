@@ -7,6 +7,8 @@ import UserModel from "../models/UserModel";
 import { useSetRecoilState } from "recoil";
 import { userState } from "../recoil/atoms.js";
 
+import './Login.css';
+
 
 function Login(props) {
     const [email, setEmail] = useState("");
@@ -29,7 +31,8 @@ function Login(props) {
 
 
 return (
-    <Container>
+    <Container fluid className="back">
+        <Container className="login-box">
             <h4>Login</h4>
             <Form onSubmit={handleSubmit}>
                 <Form.Group>
@@ -51,9 +54,14 @@ return (
                     />
                 </Form.Group>
                 <Form.Group>
-                    <Button type='submit' value='Login'>Login</Button>
+                    <Button 
+                        className="loginButton"
+                        variant='info'
+                        type='submit' 
+                        value='Login'>Login</Button>
                 </Form.Group>
             </Form>
+        </Container>
     </Container>
     );
 }

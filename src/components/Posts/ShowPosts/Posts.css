@@ -1,23 +1,36 @@
-.posts {
-    padding-top: 30px;
+.games-container {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+.game-card {
+    width: 200px;
+    height: 250px;
+    margin: 20px;
+    position: relative;
+    color: white;
+    background-color: rgba(0, 0, 0, 0.3);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    transition: 0.1s linear;
 }
 
-.post {
-    margin-top: 0px;
+.game-card:hover {
+    transform: scale(1.1);
 }
 
-.btn-circle { 
-    width: 30px; 
-    height: 30px; 
-    padding: 6px 0px; 
-    border-radius: 15px; 
-    font-size: 8px; 
-    text-align: center; 
+.image-wrapper {
+    width: 200px;
+    height: 250px;
+    margin: 0 auto;
+    position: absolute;
+    z-index: -1;
+    overflow: hidden;
 }
-
-.side-info {
-    background-color: rgb(123, 215, 249);
-    padding-top: 30px;
-    padding-bottom: 30px;
-    min-height: auto;
+.image-wrapper img {
+    width: 200px;
+    height: 250px;
+    object-fit: cover;
 }

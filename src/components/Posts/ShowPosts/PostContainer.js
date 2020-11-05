@@ -1,40 +1,43 @@
-import React, { useState } from 'react';
-import EditPost from '../EditPost';
-import { Modal, Container, Col, Row, Card, Button } from 'react-bootstrap';
-import { faEdit } from "@fortawesome/free-solid-svg-icons";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import React from 'react';
+import { Link } from 'react-router-dom';
+
+import { Container, Col, Row, Image, Button } from 'react-bootstrap';
+
+import './PostContainer.css';
+import Default from './images/default.jpg';
 
 const PostContainer = (props) => {
-    const [show, setShow] = useState(false);
-    const handleShow = () => setShow(true);
-    const handleClose = () => setShow(false);
+    const { category, tags, city, title, message, user, _id } = props.post;
+    console.log(_id);
 
-    const PostList = props.post.map(post => {
-        return (
-            <Container className="p-4" key={post._id}>
-                <div className='post-card'>
-                    {/* <div className='image-wrapper'>
-                        <img src={TODO for userprofile img} alt={title} />
-                    </div> */}
-                    <p>{post.user}</p>
-                    <h5>{post.city}</h5>
-                    <h5>{post.title}</h5>
-                    <p>{post.message}</p>
-                </div>
-                <FontAwesomeIcon icon={faEdit} size="md" variant="float-right" onClick={handleShow}/>
-                    <Modal show={show} onHide={handleClose}>
-                        <EditPost />
-                    </Modal>
-                <hr/>
-            </Container>
-        )
-    })
-
-    console.log(props);
-
-    return PostList
+    return (
+        <Container className='p-4'>
+            <Row className='post-card'>
+                <Col xs="2">
+                    <Row>
+                        <Image id="post-img" src={Default} roundedCircle />
+                    </Row>
+                    <Row className="icons">
+                        <Button
+                            size="sm" 
+                            as={Link}
+                            to={`/posts/${_id}/edit`}
+                            variant="outline-info"
+                            >Edit</Button>
+                    </Row>
+                </Col>
+                <Col lg="10">
+                    <h5>{city}</h5>
+                    <h5>Title: {title}</h5>
+                    <p>{user}</p>
+                    <p>{message}</p>
+                    <p>Category: {category}</p>
+                    <p>Tags: {tags}</p>
+                </Col>
+            </Row>
+            <hr/>
+        </Container>
+    )
 }
 
 export default PostContainer;
-
-<FontAwesomeIcon variant="outline-primary" icon={faEdit} size="md"/>

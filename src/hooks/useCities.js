@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import CityModel from "../models/CityModel";
 
-// TODO to organize Cities by States
+// // TODO to organize Cities by States
 // let cities = require('./cityData.json');
 
 // // Optionally remap fields
@@ -13,7 +13,6 @@ import CityModel from "../models/CityModel";
 //     if (!groupedCities[stateName]) {
 //         groupedCities[stateName] = [];
 //     }
-
 //     groupedCities[stateName].push(c);
 // });
 

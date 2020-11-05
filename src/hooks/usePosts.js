@@ -4,16 +4,16 @@ import PostModel from '../models/PostModel';
 
 function usePosts(postId) {
     const [posts, setPosts] = useState([]);
-
+   
     function fetchPosts(id) {
         if (id) {
         PostModel.show(id).then((data) => {
             setPosts(data.post);
         });
         } else {
-        PostModel.all().then((data) => {
-            setPosts(data.posts);
-        });
+            PostModel.all().then((data) => {
+                setPosts(data.posts);
+            });
         }
     }
 

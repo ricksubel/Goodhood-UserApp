@@ -1,40 +1,40 @@
 import React from 'react';
+import { Container, Row, Col, Image } from 'react-bootstrap';
 import Header from './Header/Header';
-import Footer from './Footer/Footer';
+// import Footer from './Footer/Footer';
 
+import HandsUp2 from '../../components/Landing/Footer/images/handsup2.png';
 import './Landing.css';
 
 
 function Landing() {
 
     return (
-        <div className="container-fluid">
-            <div className="row text-center">
+        <Container fluid className="landing">
+            <Row className="top-row text-center">
                 <Header />
-            </div>
-            <div className="container d-flex align-content-center mt-5">
-                    <div className="col-sm">
-                        <span className="dot">
-                            <p className="my-auto">Option1</p>
-                        </span>
-                    </div>
-                    <div className="col-sm">
-                        <span className="dot">
-                            <p className="my-auto">Option2</p>
-                        </span>
-                    </div>
-                    <div className="col-sm">
-                        <span className="dot">
-                            <p className="my-auto">Option3</p>
-                        </span>
-                    </div>
-            </div>
-
-            {/* TODO fix image size */}
-            {/* <div className="row-fluid">
-                <Footer />
-            </div> */}
-        </div>
+            </Row>
+            <Row className="mt-5">
+                <Col xs={6} md={4}>
+                    <span className="dot1">
+                        <h3 className="my-auto">Here for help?</h3>
+                    </span>
+                </Col>
+                <Col xs={6} md={4}>
+                    <span className="dot2">
+                        <h3 className="my-auto">Here to help?</h3>
+                    </span>
+                </Col>
+                <Col xs={6} md={4}>
+                    <span className="dot3">
+                        <h3 className="my-auto">Got a Good Idea?</h3>
+                    </span>
+                </Col>
+            </Row>
+            <Row className="landing-footer">
+                <Image src={HandsUp2} responsive></Image>
+            </Row>
+            </Container>
 
     )
 }
