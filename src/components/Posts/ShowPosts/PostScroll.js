@@ -24,7 +24,7 @@ const PostScroll = (props) => {
                 height: 750,
                 overflow: 'auto',
                 display: 'flex',
-                flexDirection: 'column',
+                flexDirection: 'column-reverse',
             }}
             dataLength={10}
             // next={fetchPosts}

@@ -10,9 +10,6 @@ const tagsList = [
 ]
 
 
-const refreshPage = () => {
-    window.location.reload();
-}
 
 class EditPost extends React.Component {
     state = {
@@ -32,9 +29,10 @@ class EditPost extends React.Component {
     fetchPost = () => {
         PostModel.show(this.props.match.params.id)
             .then(json => {
+                console.log(json, "ERROR HERE")
                 this.setState({
-                    ...json.post,
-                    formTitle: json.post.title
+                    ...json.Post,
+                    formTitle: json.Post.title
                 })
             })
     }
@@ -42,16 +40,20 @@ class EditPost extends React.Component {
 
     handleSubmit = (event) => {
         event.preventDefault();
-        PostModel.edit(this.props.match.params.id, this.state)
+        PostModel.update(this.props.match.params.id, this.state)
             .then(json => {
-                console.log("Post updated!"); 
-                refreshPage();  
+                this.props.history.push(`/neighborhood`)
+                console.log("POST UPDATED!");  
             })
     }
 
     handleChange = (event) => {
+        console.log(event.target.name, event.target.value)
         if(event.target.type === 'checkbox') {
-            this.setState(allTags => [...allTags, event.target.value])
+            this.setState(prevState => ({
+                tags: [...prevState.tags, event.target.value]
+            }))
+
         } else {   
             this.setState({
                 [event.target.name]: event.target.value
@@ -69,23 +71,26 @@ class EditPost extends React.Component {
                             <Form.Check 
                                 inline label="Needing Help"
                                 type="radio" 
-                                name="Needing Help" 
+                                name="category" 
                                 onChange={this.handleChange}
-                                value={this.state.category}
+                                value="Needing help"
+                                checked={this.state.category === "Needing Help"}
                                 />
                             <Form.Check 
                                 inline label="Offering Help"
                                 type="radio" 
-                                name="Offering Help" 
+                                name="category" 
                                 onChange={this.handleChange}
-                                value={this.state.category}
+                                value="Offering Help"
+                                checked={this.state.category === "Offering Help"}
                                 />
                             <Form.Check 
                                 inline label="Neighborhood Suggestions" 
                                 type="radio" 
-                                name="Neighborhood Suggestions"
+                                name="category"
                                 onChange={this.handleChange}
-                                value={this.state.category}
+                                value="Neighborhood Suggestions"
+                                checked={this.state.category === "Neighborhood Suggestions"}
                                 />
                         </Form.Group>
                         {/* TODO fix this!!! */}
@@ -109,7 +114,8 @@ class EditPost extends React.Component {
                                                 type='checkbox'
                                                 name={tag}
                                                 onChange={this.handleChange}
-                                                value={this.state.tags}
+                                                value={tag}
+                                                checked={this.state.tags.includes(tag)}
                                                 />
                                             ))}
                                             </Form.Check>
@@ -125,14 +131,15 @@ class EditPost extends React.Component {
                             {/* <Form.Control as="select" onChange={(e)=> setCity(e.target.value)}> */}
                                 {/* TODO fix this!!! */}
                                 {/* {cityList > 0 ? cityList.map(city => { */}
-                                {/* return <option value={city.id} key={city.id}>{city.city}, {city.state}</option>    
+                                {/* return <option value={city.id} key={city.id}>{city.city}, {city.state}</
+                                checked={option>    
                                 }): null} */}
                             {/* </Form.Control> */}
                             <Form.Control 
                                 type="text"
                                 name="city"
                                 onChange={this.handleChange}
-                                value={this.state.message}
+                                value={this.state.city}
                                 />
                         </Form.Group>
 
@@ -142,7 +149,7 @@ class EditPost extends React.Component {
                                 type="text" 
                                 name="title"
                                 onChange={this.handleChange}
-                                value={this.state.message}
+                                value={this.state.title}
                                 />
                         </Form.Group>
                         <Form.Group> 
@@ -159,8 +166,8 @@ class EditPost extends React.Component {
                             <Button 
                                 variant="info"
                                 type="submit" 
-                                value="Post" 
-                                onClick={refreshPage}>Submit Post</Button>
+                                value="Update" 
+                                >Update</Button>
                         </Form.Group>
                     </Form>
                 {/* TODO :null} */}

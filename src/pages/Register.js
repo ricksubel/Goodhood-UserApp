@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { Container, Form, Button } from 'react-bootstrap';
 
 import AuthModel from "../models/AuthModel";
+import './Login.css';
 
 function Register(props) {
     const [username, setUsername] = useState("");
@@ -20,8 +21,8 @@ function Register(props) {
     }
 
 return (
-    <Container fluid className="wrapper">
-        <Container className="loginBox">
+    <Container fluid className="back">
+        <Container className="login-box">
             <h4>User Registration</h4>
             <Form onSubmit={handleSubmit}>
                 <Form.Group>

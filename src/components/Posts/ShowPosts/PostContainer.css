@@ -22,7 +22,10 @@
 }
 
 .icons {
-    margin-top: auto;
+    margin:auto;
+    margin-top: 15px;
+    display: flex;
+    flex-direction: row;
 }
 
 .d-block {

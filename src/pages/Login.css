@@ -1,29 +1,13 @@
 
-.wrapper {
+.back {
     height: 100vh;
     width: 100vw;
     background-image: url('../components/Landing/Footer/images/MainStreet.jpg');
     background-size: cover;
-    position: relative;
     padding: 150px;
 }
 
-.blur {
-    background:
-    linear-gradient(
-    rgba(57, 149, 241, 0.3),
-    rgba(94, 224, 244, 0.5), 100%
-    );
-    backdrop-filter: blur(2.5px);
-    height: 100vh;
-    width: 100%;
-    position: absolute;
-    z-index: -1;
-    margin: 0px;
-}
-
-
-.loginBox {
+.login-box {
     text-align: left;
     font-weight: bold;
     color: white;
@@ -34,9 +18,6 @@
     border-bottom-left-radius: 50px;
     border: 1px solid whitesmoke;
     padding: 20px;
-    position: relative;
-    z-index: 0;
-
 }
 
 .loginButton {

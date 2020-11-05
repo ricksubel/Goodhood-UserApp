@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-import Link from 'react-router-dom';
 import { Container, Form, Button } from 'react-bootstrap';
 
 import AuthModel from "../models/AuthModel";
@@ -32,8 +31,8 @@ function Login(props) {
 
 
 return (
-    <Container fluid className="wrapper">
-        <Container className="loginBox">
+    <Container fluid className="back">
+        <Container className="login-box">
             <h4>Login</h4>
             <Form onSubmit={handleSubmit}>
                 <Form.Group>

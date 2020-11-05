@@ -1,0 +1,23 @@
+.wrapper {
+    height: 100vh;
+    width: 100vw;
+    background-image: url('../components/Posts/ShowPosts/images/housepainting.jpg');
+    background-size: cover;
+    /* opacity: 50%; */
+    position: relative;
+    z-index: -3;
+    padding: 150px;
+}
+
+
+.profile-info {
+    color: white;
+    text-emphasis: bold;
+    padding: 15px;
+    background-color: rgba(85, 155, 160, 0.899);
+    overflow: hidden;
+    z-index: 1;
+    border-top-right-radius: 50px;
+    border-bottom-left-radius: 50px;
+    border: 1px solid whitesmoke;
+}

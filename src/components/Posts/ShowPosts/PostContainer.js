@@ -1,9 +1,7 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { Link } from 'react-router-dom';
 
 import { Container, Col, Row, Image, Button } from 'react-bootstrap';
-import { faEdit, } from "@fortawesome/free-solid-svg-icons";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 import './PostContainer.css';
 import Default from './images/default.jpg';

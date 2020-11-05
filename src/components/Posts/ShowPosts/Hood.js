@@ -120,9 +120,9 @@ const ShowPosts = (props) => {
                         ) : (  
                         <>
                         <Container className="blurred">
-                            <span className="blur">
+                            <div className="blur-1">
                                 <h1 className="message">Making the world better one neighborhood at a time!</h1>
-                            </span>
+                            </div>
                         </Container>   
                         </>
                         )}
